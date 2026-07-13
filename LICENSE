@@ -1,0 +1,43 @@
+NIIT LIMITED PROPRIETARY LICENSE
+
+Copyright (c) 2026 NIIT Limited. All rights reserved.
+
+SCVHS (Specify, Construct, Validate, Harden, Ship) is a proprietary methodology
+developed by NIIT Limited ("NIIT"). This repository contains the methodology
+specification, terminology, templates, examples, and research documentation
+that constitute the SCVHS methodology.
+
+PERMITTED USES:
+- NIIT employees and authorized contractors may use this methodology for
+  instructional design, curriculum development, and delivery within NIIT programs.
+- Learners enrolled in NIIT programs may use the templates and examples provided
+  in this repository for their coursework.
+- The research paper (docs/research-paper.md) may be cited in academic and
+  professional contexts with full attribution to NIIT Limited.
+
+PROHIBITED USES WITHOUT WRITTEN PERMISSION FROM NIIT LIMITED:
+- Commercial use of the methodology or any part thereof
+- Reproduction or distribution of the methodology specification, templates,
+  or worked examples outside NIIT programs
+- Creation of derivative works based on the SCVHS methodology
+- Use of the SCVHS name, acronym, or proprietary terms (Comprehension Primitive,
+  Decision Log as defined in SCVHS, Scaffolding Fade as defined in SCVHS,
+  Ship-Backward Design) in any commercial or educational product
+- Training or fine-tuning AI models on the content of this repository
+
+INTELLECTUAL PROPERTY:
+The following are proprietary to NIIT Limited:
+- The SCVHS name and acronym as applied to the five-phase engineering methodology
+- The Comprehension Primitive concept and specification
+- The Decision Log concept, structure, and specification as defined in this repository
+- The three-mode structure (Hand-First + Validate AI / Hybrid / Full SCVHS) and
+  their definitions
+- The Scaffolding Fade model as applied to AI construction modes
+- Ship-Backward Design as a curriculum design methodology
+
+DISCLAIMER:
+This methodology is provided "as is" for use within authorized NIIT programs.
+NIIT makes no warranties, express or implied, regarding fitness for any
+particular purpose.
+
+For licensing inquiries, contact: NIIT Limited, Instructional Design
