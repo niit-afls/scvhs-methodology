@@ -149,6 +149,22 @@ The scaffolding is different:
 
 A learner moves from Mode 2 to Mode 3 for a technology area when they no longer need to explain every line to know it is correct — they can read it fluently and only need to flag what breaks the spec contract.
 
+### In Practice: What the Learner's Evening Looks Like
+
+Field feedback from content teams shows the confusion persists even after the one-line distinction, so here is the same sprint in both modes. The setup is identical in both: the learner authors the spec, hand-writes the Comprehension Primitive, and the AI tool constructs from the spec. Only the reading changes.
+
+Think of reviewing a pull request from a junior developer (the AI tool):
+
+- **Mode 2 is reviewing with a mentor's cheat sheet.** The Agent Failure Modes list names the mistakes to look for ("check whether it paginates in memory; check page indexing"). The learner writes a Decision Log entry for every construct, including correct ones - explaining correct code is the learning activity, and it cannot be faked.
+- **Mode 3 is reviewing as the senior.** No cheat sheet; the spec is the sole reference. The learner tests the output against their own acceptance criteria ("my spec caps page size at 50 - does size=100000 fail correctly?") and logs only what was wrong and how it was fixed. Passing constructs get a recorded pass, no essay.
+
+Mode 2 trains the learner to READ AI output in a technology. Mode 3 tests whether they can OWN it.
+
+Two rules content developers must apply when assigning these modes:
+
+1. **Transition signal:** move a sprint to Mode 3 only when prior Mode 2 Decision Logs show learners catching defects the failure modes list did not name.
+2. **Reset rule:** the ladder is per technology, not per learner. A cohort in Mode 3 for REST endpoints correctly returns to Mode 2 the sprint a new technology (for example, containerization) appears - scaffolding follows the mental model, not seniority.
+
 ---
 
 ## Mode Decision Guide for Content Developers
