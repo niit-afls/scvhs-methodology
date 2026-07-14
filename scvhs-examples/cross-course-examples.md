@@ -3,7 +3,9 @@
 > Reference document for Content Development team.  
 > Shows how Specify, Construct, Validate, Harden, Ship applies across every course in the program — with concrete worked examples sprint by sprint.
 
-For the full worked examples, see [C04-Web-Applications/](C04-Web-Applications/). This document provides the cross-course summary and representative examples for C05–C09.
+For the full worked examples, see [C04-Web-Applications/](C04-Web-Applications/) and [C06-Spring-Boot/](C06-Spring-Boot/). This document provides the cross-course summary and representative examples.
+
+> Course numbering, names and sprint counts below follow **Product Note v6** (AI Engineering Professional Program, 15 courses). Mode ladders marked *(indicative)* are placeholders until that course's Sprint CTKS design is approved; the C06 ladder reflects the reviewed C06 CTKS proposal.
 
 ---
 
@@ -11,16 +13,17 @@ For the full worked examples, see [C04-Web-Applications/](C04-Web-Applications/)
 
 | Course | Technology stack | Mode progression | What "Validate" looks like |
 |---|---|---|---|
-| C04: Web Applications | HTML, CSS, Tailwind, JavaScript | Mode 1 (S1–2) → Mode 2 (S3–5) → Mode 3 (S6–8) | W3C Validator, DevTools, browser resize, keyboard nav |
-| C05: React + TypeScript | React, TypeScript, Hooks, Context | Mode 1 (S1–2) → Mode 3 (S3–8) | TypeScript compiler, React DevTools, browser rendering |
-| C06: Spring Boot | Java, Spring MVC, Security, JPA | Mode 1 (S1–2) → Mode 2 (S3–5) → Mode 3 (S6–8) | Postman, Spring application logs, unit tests |
-| C07: Distributed Systems | Microservices, Kafka, Resilience4j | Mode 2 (S1–4) → Mode 3 (S5–8) | Service logs, Postman, Kafka CLI, DB inspection |
-| C08: Cloud-Native (Elective) | Docker, CI/CD, Kubernetes | Mode 2 (S1–3) → Mode 3 (S4–8) | docker build/run, docker compose up, pipeline trigger |
-| C09: Agentic AI (Elective) | LangChain, RAG, Multi-agent | Mode 2 (S1–4) → Mode 3 (S5–8) | LLM output inspection, test queries, iteration logs |
+| C04: Building Responsive and Interactive Web Applications (8 sprints) | HTML, CSS, Tailwind, JavaScript | Mode 1 (S1-2) -> Mode 2 (S3-5) -> Mode 3 (S6-8) | W3C Validator, DevTools, browser resize, keyboard nav |
+| C05: Building Modern Frontend Applications with React (12 sprints) | React, TypeScript, Hooks, Context | Mode 1 early -> Mode 3 late *(indicative)* | TypeScript compiler, React DevTools, browser rendering |
+| C06: Developing Java Back-End Applications Using Spring Boot (12 sprints) | Java, Spring Boot, JPA, Security, Docker | Mode 1 (S1) -> Mode 2 (S2-5) -> Mode 3 (S6) -> Mode 2 (S7-9: Docker, testing, security are new or high-risk) -> Mode 3 (S10-11) -> Assessment variant (S12) | Postman, SQL logs, Swagger UI, JUnit/Testcontainers, docker compose up |
+| C07: Building Distributed Systems and Microservices using Java (12 sprints) | Microservices, Kafka, Resilience4j | Mode 2 early -> Mode 3 late *(indicative)* | Service logs, Postman, Kafka CLI, DB inspection |
+| C14: System Design, DevOps and Cloud Deployment (M2, 7 sprints) | CI/CD, Docker, Kubernetes, AWS, observability | Mode 2 early -> Mode 3 late *(indicative)*; containerization basics are covered earlier in C06 S7 | docker build/run, docker compose up, pipeline trigger, kubectl |
+| C11: Engineering Agentic AI Systems and C12: Build RAG Based Systems (M2, 11 + 9 sprints) | LangChain, LangGraph, LlamaIndex, vector stores | Mode 2 early -> Mode 3 late *(indicative)* | LLM output inspection, test queries, RAGAS scores, iteration logs |
 
 **The pattern holds across every course:**
 Early sprints use Mode 1 or Hybrid because learners are building mental models for the first time.
 Later sprints use Full SCVHS because learners now have enough understanding to direct an agent and own the output.
+A NEW technology resets the ladder even late in a course (see C06 S7-9), because scaffolding follows the mental model, not seniority.
 The Decision Log is always the same format — construct by construct, spec is the contract, defects are specific.
 
 ---
@@ -121,12 +124,14 @@ Hand-write a minimal React Context with one value and one consumer. Scratch file
 
 ---
 
-## C06 — Spring Boot
+## C06 — Developing Java Back-End Applications Using Spring Boot
 
-### Example C06-1: Dependency Injection (Mode: Hand-First + Validate AI)
+Full worked spec + Decision Log pair in [C06-Spring-Boot/](C06-Spring-Boot/).
+
+### Example C06-1: Dependency Injection (Mode: Hand-First + Validate AI; C06 Sprint 1)
 
 **Specify:**
-Learner writes `Spec_S02_UserService_DI.md`. Defines `UserService` interface (two methods), `UserServiceImpl`, `UserController` depending on `UserService` via constructor injection, and expected response for `/users/{id}`.
+Learner writes `Spec_S01_UserService_DI.md`. Defines `UserService` interface (two methods), `UserServiceImpl`, `UserController` depending on `UserService` via constructor injection, and expected response for `/users/{id}`.
 
 **Construct:**
 Learner hand-writes all three files. Constructor injection, `@Service`, `@RestController` — foundational Spring concepts must be earned by writing.
@@ -141,7 +146,7 @@ Learner hand-writes all three files. Constructor injection, `@Service`, `@RestCo
 
 ---
 
-### Example C06-2: REST API with Validation (Mode: Hybrid)
+### Example C06-2: REST API with Validation (Mode: Hybrid; C06 Sprints 2-3)
 
 *Sample Decision Log entry:*
 > Construct: POST /products endpoint.
@@ -153,7 +158,7 @@ Learner hand-writes all three files. Constructor injection, `@Service`, `@RestCo
 
 ---
 
-## C07 — Distributed Systems and Microservices
+## C07 — Building Distributed Systems and Microservices using Java
 
 ### Example C07-2: Kafka Event-Driven Communication (Mode: Full SCVHS)
 
@@ -173,9 +178,9 @@ Hand-write a minimal Kafka producer that sends a string to a topic and a consume
 
 ---
 
-## C08 — Cloud-Native Systems
+## Containerization and Cloud - C06 Sprint 7 (Docker basics) and C14: System Design, DevOps and Cloud Deployment (M2)
 
-### Example C08-1: Dockerfile (Mode: Hybrid)
+### Example: Dockerfile (Mode: Hybrid; applies to C06 S7 and C14)
 
 *Sample Decision Log entry:*
 > Construct: User configuration.
@@ -187,9 +192,9 @@ Hand-write a minimal Kafka producer that sends a string to a topic and a consume
 
 ---
 
-## C09 — Agentic AI Systems
+## Agentic AI and RAG - C11: Engineering Agentic AI Systems and C12: Build RAG Based Systems (M2)
 
-### Example C09-2: RAG Pipeline (Mode: Full SCVHS)
+### Example: RAG Pipeline (Mode: Full SCVHS; C12)
 
 **Specify:**
 Learner writes `Spec_S04_DocumentQA_RAG.md`. Defines document source, chunking strategy (512 tokens, 50-token overlap), embedding model, vector store (Chroma), retrieval top-k (5 chunks), generation prompt template (answer only from retrieved context), and expected behavior when no relevant document is found.
@@ -202,7 +207,7 @@ Learner writes `Spec_S04_DocumentQA_RAG.md`. Defines document source, chunking s
 > How caught: Asked "What is the capital of France?" — not in the docs. Model answered "Paris." Spec was explicit: answer only from retrieved context.
 > Fix: Added to the system prompt: "If the retrieved context does not contain the answer, respond with: I could not find this information in the provided documents. Do not use knowledge outside the retrieved context."
 
-### Example C09-3: Multi-Agent System (Mode: Full SCVHS)
+### Example: Multi-Agent System (Mode: Full SCVHS; C11)
 
 *Sample Decision Log entry:*
 > Construct: Termination condition.

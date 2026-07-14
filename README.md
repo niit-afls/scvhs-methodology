@@ -40,7 +40,7 @@ SCVHS closes this gap through three mechanisms:
 2. **The Comprehension Primitive** — guarantees reading literacy before validation begins
 3. **The Decision Log** — creates an externalized record of understanding, construct by construct
 
-See the full evidence base in the [Research Paper](docs/research-paper.md).
+See the full evidence base in the [Research Paper](docs/SCVHS_Research_Paper_v1.docx).
 
 ---
 
@@ -70,10 +70,13 @@ scvhs/
 │   │   ├── Spec_S02_Portfolio_Stylesheet.md
 │   │   ├── Spec_S03_Portfolio_Layout.md
 │   │   └── AI_Decision_Log_S01_Example.md
-│   └── cross-course-examples.md       — examples across C04–C09
+│   ├── C06-Spring-Boot/               — Java, Spring Boot REST APIs
+│   │   ├── Spec_S02_Task_API.md
+│   │   └── AI_Decision_Log_S02_Example.md
+│   └── cross-course-examples.md       — examples across courses (aligned to product note v6)
 │
 └── docs/                              — research and positioning documents
-    ├── research-paper.md              — formal research paper (trademark base)
+    ├── SCVHS_Research_Paper_v1.docx   — formal research paper (trademark base)
     ├── terminology-glossary.md        — canonical definitions of all SCVHS terms
     └── aws-aidlc-mapping.md           — SCVHS mapped to AWS AI-DLC
 ```
@@ -125,7 +128,7 @@ SCVHS is a proprietary methodology developed by NIIT Limited. The methodology sp
 
 - **Methodology name:** SCVHS (Specify, Construct, Validate, Harden, Ship)
 - **Proprietary terms:** Comprehension Primitive, Decision Log (as used in SCVHS), SCVHS Mode, Scaffolding Fade (as used in SCVHS), Ship-Backward Design
-- **Registration status:** Pre-registration — see [research-paper.md](docs/research-paper.md) for priority establishment
+- **Registration status:** Pre-registration — see the [Research Paper](docs/SCVHS_Research_Paper_v1.docx) for priority establishment
 - https://zenodo.org/records/20748753
 
 Contact: NIIT Limited, Instructional Design — AI-Native Engineering Program
