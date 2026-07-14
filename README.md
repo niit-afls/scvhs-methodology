@@ -129,6 +129,6 @@ SCVHS is a proprietary methodology developed by NIIT Limited. The methodology sp
 - **Methodology name:** SCVHS (Specify, Construct, Validate, Harden, Ship)
 - **Proprietary terms:** Comprehension Primitive, Decision Log (as used in SCVHS), SCVHS Mode, Scaffolding Fade (as used in SCVHS), Ship-Backward Design
 - **Registration status:** Pre-registration — see the [Research Paper](docs/SCVHS_Research_Paper_v1.docx) for priority establishment
-- https://zenodo.org/records/20748753
 
-Contact: NIIT Limited, Instructional Design — AI-Native Engineering Program
+
+Contact: NIIT Limited, AFLS Engineering 
