@@ -152,7 +152,9 @@ The commit contains:
 - The corrected artifact
 - The AI-generated version (for comparison and audit)
 - The completed Decision Log
-- Any scratch files are excluded (Comprehension Primitive scratch files are never committed)
+- The spec, including the Comprehension Primitive (Modes 2/3): committed alongside everything else,
+  not excluded. See `02-comprehension-primitive.md` (updated 2026-07-18) for why it is now part of
+  the deliverable set rather than a discarded scratch file.
 
 ### The commit message
 The commit message must be meaningful. It names what was built and what was validated, not just the change type:

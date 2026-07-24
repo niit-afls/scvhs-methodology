@@ -1,25 +1,40 @@
 # The Comprehension Primitive
 
-> A short, hand-written minimal example of the core construct type in a sprint,  
-> produced BEFORE giving the spec to an AI tool.  
+> A short, hand-written minimal example of the core construct type in a sprint,
+> produced BEFORE giving the spec to an AI tool, and committed alongside it.
 > Required in Modes 2 and 3. Not required in Mode 1 (the learner IS constructing by hand).
 
 ---
 
 ## What It Is
 
-A Comprehension Primitive is one minimal, hand-written construct — not the full artifact — that establishes reading literacy before the learner validates AI output.
+A Comprehension Primitive is one minimal, hand-written construct, not the full artifact, that
+establishes reading literacy before the learner validates AI output. It is part of the spec: the
+practice's README names the target construct (what to hand-write), the learner writes the spec and
+the primitive together, and the primitive lives either inline in the spec or as its own file the
+spec references.
 
 **It is not:**
 - The full artifact (that is what AI constructs)
-- A deliverable (it is never committed to the repo)
-- A polished piece of code (production quality is irrelevant)
-- A long exercise (10–20 minutes maximum)
+- A polished piece of code (production quality is irrelevant, but see "Pattern still matters" below)
+- A long exercise (10-20 minutes maximum)
+- Optional to review: since it is committed code, it falls under the same review as the rest of the
+  spec and shipped artifact, it is not exempt.
 
 **It is:**
 - The minimum viable generation act for this technology construct
 - The key that unlocks the schema needed to read the AI's version
-- A scratch file that is discarded after use
+- Committed alongside the spec, code, and Decision Log, not a private scratch file
+- A 1-2 shot example fed to the AI tool, so it steers generation toward the learner's own
+  established pattern in addition to building the learner's own comprehension
+
+### Pattern still matters, even though full correctness does not
+
+Because the primitive is now also used as a few-shot example for the AI, its structural pattern
+(naming, shape, syntax) should be right even when the primitive is not otherwise polished. A
+correctness bug in the primitive is fine, the errors themselves are still useful information, per
+"Productive Failure" below, but a genuinely wrong pattern (wrong annotation, wrong method signature
+shape) risks the AI faithfully reproducing it. Get the shape right; perfection is still not required.
 
 ---
 
@@ -50,11 +65,15 @@ Kapur (2016) shows that failed generation attempts — struggles that do not pro
 ### Rules
 
 1. **One construct only.** Not a feature, not a component — one minimal unit.
-2. **Scratch file.** Named `scratch_[technology].[ext]`. Never committed to the repo.
+2. **Named file.** `scratch_[technology].[ext]`, or embedded inline in the spec. Committed alongside
+   the spec, referenced from it if it is a separate file.
 3. **10–20 minutes.** If it takes longer, the scope is too large — reduce it.
-4. **No production requirements.** The code does not need to be correct, complete, or styled.
+4. **No production requirements.** The code does not need to be correct, complete, or styled, but
+   its structural pattern should be right (see "Pattern still matters" above), since it also serves
+   as a few-shot example for the AI.
 5. **No AI assistance.** The Comprehension Primitive is hand-written. AI assistance defeats the purpose.
-6. **Discarded after use.** The scratch file is not the deliverable.
+6. **Kept, not discarded.** It ships with the sprint, it is part of the deliverable set, not the
+   full artifact itself.
 
 ### When it can be shortened or skipped
 
@@ -291,3 +310,9 @@ print(f"Chunks: {len(chunks)}")
 A common misunderstanding: the Comprehension Primitive is not a test of whether the learner can build the construct. If the learner's scratch file has errors, that is expected and acceptable. The errors themselves are information — they mark where the schema is incomplete.
 
 When the learner then reads the AI's version (which is likely to be structurally correct for the construct type even if it has spec-level defects), the contrast between their incomplete scratch and the AI's complete version activates the learning. The Comprehension Primitive is the reading key; the AI's output is the text.
+
+Being a reading key rather than a test does not mean it stays hidden, though. Update 2026-07-18:
+the Comprehension Primitive is committed and pushed with the rest of the sprint, not discarded, and
+it also doubles as a 1-2 shot example fed to the AI tool when directing construction. See the
+"Pattern still matters" note near the top of this document for how that changes what "acceptable
+errors" means in practice.

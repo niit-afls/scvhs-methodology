@@ -35,10 +35,11 @@ Purpose: establishes reading literacy — the minimum mental model needed to eva
 
 Properties:
 - One minimal construct, not the full artifact
-- Written in a scratch file, not committed
-- Takes 10–20 minutes
-- Does not need to be production-grade
-- Discarded after use
+- Written in a scratch file or inline in the spec, committed alongside the spec
+- Takes 10-20 minutes
+- Does not need to be production-grade, but its structural pattern should be right since it also
+  serves as a 1-2 shot example for the AI tool
+- Kept, not discarded, part of the deliverable set
 
 Theoretical basis: the generation effect (Slamecka & Graf, 1978), schema theory (Rumelhart, 1980), productive failure (Kapur, 2016).
 

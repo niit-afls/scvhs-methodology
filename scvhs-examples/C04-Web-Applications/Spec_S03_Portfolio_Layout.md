@@ -165,7 +165,8 @@ Create a file called `scratch_grid.html`. Write this CSS by hand:
 ```
 
 Place 3 divs inside a `.grid-3col` container and confirm the 3-column layout in the browser.
-Do not commit this file. Its only purpose is to build your Grid mental model before CONSTRUCT.
+Commit this file alongside the spec. It builds your Grid mental model before CONSTRUCT, and it also
+gives the AI tool a concrete example of the Grid pattern to follow.
 
 ---
 
@@ -199,11 +200,3 @@ Do not commit this file. Its only purpose is to build your Grid mental model bef
 
 ---
 
-## Files to Commit
-
-```
-portfolio.html                       — updated with Tailwind classes (Sprint 1 structure preserved)
-portfolio-ai-generated-tailwind.html — AI-generated version from this spec
-AI_Decision_Log_S03.md               — your completed Decision Log
-scratch_grid.html                    — DO NOT commit (comprehension primitive only)
-```

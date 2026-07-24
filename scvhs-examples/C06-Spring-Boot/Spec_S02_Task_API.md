@@ -45,7 +45,7 @@ Event JSON shape: `{ "id": number, "title": string, "venue": string, "date": "YY
 
 Before giving this spec to the AI tool, hand-write ONE `@GetMapping` method returning a hardcoded `Event` as JSON.
 
-**File:** `scratch_first_endpoint.java` — not committed. 10-20 minutes.
+**File:** `scratch_first_endpoint.java`. Committed alongside this spec, 10-20 minutes to write.
 
 ## 5. Acceptance Criteria
 
@@ -65,9 +65,3 @@ Before giving this spec to the AI tool, hand-write ONE `@GetMapping` method retu
 - [ ] Service layer has no Spring Web imports (no HTTP types below the controller)
 - [ ] Every handler method uses the correct mapping annotation (no bare @RequestMapping on methods)
 
-## 6. Files to Commit
-
-```
-src/main/java/... (controller, service, repository, model)
-AI_Decision_Log_S02.md
-```

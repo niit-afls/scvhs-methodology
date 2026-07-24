@@ -88,9 +88,10 @@ If you have never written a sealed interface, you cannot validate whether the AI
 
 **Rules:**
 - It is ONE minimal construct, not the full artifact.
-- It is written in a scratch file, not committed to the repo.
-- It takes 10–20 minutes, not more.
-- It is a reading aid, not a deliverable.
+- It is written in its own file, or inline in this spec, and committed alongside the spec.
+- It takes 10-20 minutes, not more.
+- It is a reading aid and a 1-2 shot example for the AI tool, not a graded deliverable on its own,
+  but it is still committed code, not a private scratch file.
 
 For the full Comprehension Primitive specification and technology-specific examples, see [../scvhs-core/02-comprehension-primitive.md](../scvhs-core/02-comprehension-primitive.md).
 
@@ -208,7 +209,8 @@ Before giving this spec to an AI tool, hand-write ONE minimal example of the cor
 **What to hand-write:**
 [Describe the one minimal construct. See the Comprehension Primitive table above for examples by technology]
 
-**File:** `scratch_[name].[ext]` — do not commit this file.
+**File:** `scratch_[name].[ext]`, or inline in this section. Committed alongside this spec, not a
+private scratch file, since it also serves as a 1-2 shot example for the AI tool.
 
 ---
 
@@ -231,10 +233,11 @@ Before giving this spec to an AI tool, hand-write ONE minimal example of the cor
 
 ---
 
-## 6. Files to Commit
+## A note on scope (not a numbered section, delete before shipping)
 
-```
-[your-artifact].[ext]               — your hand-built or validated version
-[ai-generated-artifact].[ext]       — AI-generated version from this spec
-AI_Decision_Log_S0N.md              — your completed Decision Log
-```
+This document, Sections 1 through 5 above, is what you hand to the AI tool. It should read like a
+CLAUDE.md or AGENTS.md: direct instructions to whoever is constructing the code, never a
+description of the AI or the workflow in third person, and never a list of what to commit. A "Files
+to Commit" checklist belongs in the practice's README (or your own submission notes), not in the
+spec itself, since committing is a workflow action a human takes, not a construction instruction
+the AI needs.

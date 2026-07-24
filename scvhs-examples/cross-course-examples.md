@@ -65,7 +65,7 @@ Disable CSS in browser. Keyboard Tab navigation. DevTools Accessibility pane for
 Learner writes `Spec_S07_API_Integration.md`. Defines the endpoint, data shape, three UI states (loading, success, error), how each state renders, and error handling for network failure, non-ok status, and empty data.
 
 **Comprehension Primitive:**
-Hand-write one `fetch` + `await` + `try/catch` that calls one endpoint and logs the response. Scratch file only.
+Hand-write one `fetch` + `await` + `try/catch` that calls one endpoint and logs the response. Commit this file alongside the spec.
 
 **Construct:**
 AI generates the full data-fetching feature from the spec.
@@ -112,7 +112,7 @@ TypeScript compiler first (`tsc --noEmit`). Then render in browser with React De
 Learner writes `Spec_S06_ThemeContext.md`. Defines context shape (`theme: 'light' | 'dark'`, `toggleTheme: () => void`), provider component, which components consume context, and default value.
 
 **Comprehension Primitive:**
-Hand-write a minimal React Context with one value and one consumer. Scratch file only.
+Hand-write a minimal React Context with one value and one consumer. Commit this file alongside the spec.
 
 *Sample Decision Log entry:*
 > Construct: Default context value.
