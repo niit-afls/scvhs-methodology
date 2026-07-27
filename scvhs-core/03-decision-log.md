@@ -32,6 +32,7 @@ Learner Name:
 Sprint Number:
 Sprint Title:
 Date:
+Version: v1
 Spec file referenced:
 AI-generated file reviewed:
 ```
@@ -184,17 +185,33 @@ By Sprint 7, the learner has documented enough failure patterns to anticipate wh
 Decision Log files follow this naming pattern:
 
 ```
-AI_Decision_Log_S[NN].md
+AI_Decision_Log_S[NN]_v1.md
 ```
 
 Examples:
 ```
-AI_Decision_Log_S01.md
-AI_Decision_Log_S03.md
-AI_Decision_Log_S07.md
+AI_Decision_Log_S01_v1.md
+AI_Decision_Log_S03_v1.md
+AI_Decision_Log_S07_v1.md
 ```
 
-The file is committed to the repo in the same commit as the corrected artifact. It is not a draft file — it is committed once, complete. If a defect is discovered after the initial commit, a new commit is made with the fix and a note added to the relevant Decision Log entry.
+The file is committed to the repo in the same commit as the corrected artifact. It is not a draft
+file, it is committed once, complete.
+
+**Never edit a Decision Log file in place once it has been committed (locked 2026-07-27).** This
+applies to every kind of revision, adding a note about a newly discovered defect, correcting an
+entry, reclassifying a finding after further testing, anything at all. Editing the existing file
+means a correct finding can be silently overwritten by an incorrect one (or the reverse), with no
+trace visible anywhere except by manually diffing commit history construct by construct, which
+nobody reliably does.
+
+Instead, save a new file: `AI_Decision_Log_S[NN]_v2.md`, then `_v3.md`, and so on. Keep every
+version, delete none. At the top of `v2` and later, add one line stating what changed from the
+previous version and why, for example: "v2: connection-failure defect from v1 confirmed and
+restored after retesting, was incorrectly cleared in a prior edit." The latest version is what
+counts for Ship and grading. Earlier versions stay in the repo specifically so a reviewer can see
+how a finding evolved, or was lost, directly in the file listing, without needing to go looking for
+it in git history.
 
 ---
 

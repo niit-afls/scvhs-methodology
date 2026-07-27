@@ -4,10 +4,30 @@
 **Sprint Number:**
 **Sprint Title:**
 **Date:**
+**Version:** v1
 **Spec file referenced:** `Spec_S0N_Short_Title.md`
 **AI-generated file reviewed:** `[filename]`
 
 ---
+
+## File naming and versioning (locked 2026-07-27)
+
+Name this file `AI_Decision_Log_S0N_v1.md`. Never edit a Decision Log file in place once it has
+been committed, not even to fix a mistake in it or reclassify a finding after more testing. If a
+later pass changes anything in this log, correct or not, entry text, a verdict, the summary counts,
+save it as a new file: `AI_Decision_Log_S0N_v2.md`, then `_v3.md`, and so on. Keep every version,
+delete none.
+
+At the top of `v2` and any later version, add one line stating what changed from the previous
+version and why, for example: "v2: Entry 2 corrected after retesting, connection-failure defect
+from v1 confirmed and restored, was mistakenly cleared in a prior edit." The latest version is what
+counts for Ship and grading; earlier versions stay in the repo as the visible record of how the
+finding changed, so a reviewer never has to dig through commit history to see that a defect was
+found, then quietly reclassified as no defect, or the reverse.
+
+This exists because editing a Decision Log in place makes it possible for an accurate finding to be
+silently overwritten by an inaccurate one, with no visible trace unless someone actively checks git
+history construct by construct. Versioned files make that visible in the file listing itself.
 
 ## How to Use This Log
 

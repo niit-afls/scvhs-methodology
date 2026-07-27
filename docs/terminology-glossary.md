@@ -88,6 +88,12 @@ The Decision Log is not:
 
 It is the evidence of comprehension and ownership.
 
+Filed as `AI_Decision_Log_S0N_v1.md`. Never edited in place once committed (locked 2026-07-27): a
+revision, correcting a mistake, reclassifying a finding after more testing, anything, is saved as a
+new file, `_v2.md`, `_v3.md`, and so on, never overwriting a prior version. This keeps every past
+finding visible in the file listing itself, rather than something only recoverable by digging
+through commit history.
+
 ---
 
 ## HARDEN (Phase 4)

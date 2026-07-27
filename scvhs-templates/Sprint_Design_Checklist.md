@@ -65,7 +65,8 @@ Before doing anything else, define the Ship artifact.
   - Mode 2: "Fill an entry for EVERY construct — passing and failing alike."
   - Mode 3: "Fill a full entry for defective constructs. Record a pass for correct ones."
 - [ ] **Construct granularity specified:** The sprint brief makes clear what counts as "one construct" for this technology (e.g., "one rule set" for CSS; "one endpoint method" for Spring Boot).
-- [ ] **Decision Log file named:** Sprint materials specify the Decision Log filename: `AI_Decision_Log_S[NN].md`.
+- [ ] **Decision Log file named and versioned:** Sprint materials specify the Decision Log filename:
+      `AI_Decision_Log_S[NN]_v1.md`, `_v2.md` for any later revision, never edited in place.
 
 ---
 
