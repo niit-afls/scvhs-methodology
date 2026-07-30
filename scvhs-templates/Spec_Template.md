@@ -19,6 +19,13 @@ It serves two purposes at once:
 If your spec is vague, the AI output will be unpredictable and hard to validate.
 If your acceptance criteria are not testable, you cannot validate objectively.
 
+**If you are new to writing specs and do not know where to start:** check the practice's README
+first. It should point you at the specific things this sprint's Constraints and Acceptance Criteria
+need to cover, without answering them for you. If the README leaves you staring at a blank page, ask
+your content team to add pointers, that is a gap in the practice materials, not something you are
+expected to guess. See "Guidance for the practice README" in `Practice_README_Guidance.md` if you
+are the one writing that README.
+
 **Standards:**
 - Name the technology construct, not just the content. Not "a projects section" — "a `<section>` element containing three `<article>` elements."
 - Every acceptance criterion must be a binary pass/fail check, something you can verify with a tool, in a browser, in a terminal, or by reading the code.

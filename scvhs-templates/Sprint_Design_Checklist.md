@@ -45,6 +45,11 @@ Before doing anything else, define the Ship artifact.
 - [ ] **File naming specified:** The spec says to name the file `scratch_[name].[ext]` (or embed it
       inline) and to commit it alongside the spec, not to discard it.
 - [ ] **Comprehension Primitive matches the core construct type:** The hand-written piece maps to the technology construct that will be most unfamiliar to the learner in this sprint.
+- [ ] **Practice README scaffolds the spec, without writing it.** The README names the specific
+      Constraints and Acceptance Criteria topics this sprint's spec must cover (see
+      `Practice_README_Guidance.md`). Pointers name what to decide, they never supply the decision.
+      A learner reading only the README should never be staring at a blank page, and should never
+      be able to copy an answer straight out of it either.
 
 ---
 

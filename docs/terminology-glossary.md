@@ -27,6 +27,29 @@ The Acceptance Criteria IS the VALIDATE checklist. A learner works through it co
 
 ---
 
+## Practice README (locked 2026-07-27)
+
+The learner-facing document for one sprint's practice, separate from the spec. Written by the
+content developer, read by the learner before they write their own spec.
+
+Its job for the Specify stage: name the specific Constraints and Acceptance Criteria topics that
+sprint's spec must cover, without supplying the answers. A pointer says what to decide ("where the
+database credentials come from, and what happens when they are missing"); it never says the
+decision itself ("read them from environment variables"). The learner still writes every line of
+their own spec.
+
+This exists to solve a real problem without removing the learning: a first-time learner facing a
+blank "write your Constraints" instruction often does not know what dimensions matter, and either
+gets stuck, or writes a spec that looks complete but never asks the question that would have caught
+a real defect. The Practice README closes that gap by naming the dimensions. See
+`Practice_README_Guidance.md` for the pattern and a worked example.
+
+What it is not: a place to write the spec's answers, hand the AI tool a workflow narration, or list
+files to commit inside the spec itself (that also belongs here, not in the spec, see the Spec
+Template's note on scope).
+
+---
+
 ## Comprehension Primitive
 
 A short, hand-written minimal example of the core construct type used in a sprint, produced by the learner BEFORE giving the spec to an AI tool in Modes 2 and 3.
