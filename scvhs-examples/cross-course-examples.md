@@ -22,7 +22,7 @@ For the full worked examples, see [C04-Web-Applications/](C04-Web-Applications/)
 
 **The pattern holds across every course:**
 Early sprints use Mode 1 or Hybrid because learners are building mental models for the first time.
-Later sprints use Full SCVHS because learners now have enough understanding to direct an agent and own the output.
+Later sprints use Mode 3 (AI-Drafted Spec) because learners have practiced Mode 2 enough to reliably review a spec, not just write one.
 A NEW technology resets the ladder even late in a course (see C06 S7-9), because scaffolding follows the mental model, not seniority.
 The Decision Log is always the same format — construct by construct, spec is the contract, defects are specific.
 
@@ -59,10 +59,10 @@ Disable CSS in browser. Keyboard Tab navigation. DevTools Accessibility pane for
 
 ---
 
-### Example C04-3: Fetch API (Mode: Full SCVHS)
+### Example C04-3: Fetch API (Mode: 3, AI-Drafted Spec)
 
 **Specify:**
-Learner writes `Spec_S07_API_Integration.md`. Defines the endpoint, data shape, three UI states (loading, success, error), how each state renders, and error handling for network failure, non-ok status, and empty data.
+AI drafts `Spec_S07_API_Integration.md` from the README's pointers; learner reviews and finalizes it. Defines the endpoint, data shape, three UI states (loading, success, error), how each state renders, and error handling for network failure, non-ok status, and empty data.
 
 **Comprehension Primitive:**
 Hand-write one `fetch` + `await` + `try/catch` that calls one endpoint and logs the response. Commit this file alongside the spec.
@@ -106,10 +106,10 @@ TypeScript compiler first (`tsc --noEmit`). Then render in browser with React De
 
 ---
 
-### Example C05-3: React Context (Mode: Full SCVHS)
+### Example C05-3: React Context (Mode: 3, AI-Drafted Spec)
 
 **Specify:**
-Learner writes `Spec_S06_ThemeContext.md`. Defines context shape (`theme: 'light' | 'dark'`, `toggleTheme: () => void`), provider component, which components consume context, and default value.
+AI drafts `Spec_S06_ThemeContext.md` from the README's pointers; learner reviews and finalizes it. Defines context shape (`theme: 'light' | 'dark'`, `toggleTheme: () => void`), provider component, which components consume context, and default value.
 
 **Comprehension Primitive:**
 Hand-write a minimal React Context with one value and one consumer. Commit this file alongside the spec.
@@ -160,10 +160,10 @@ Learner hand-writes all three files. Constructor injection, `@Service`, `@RestCo
 
 ## C07 — Building Distributed Systems and Microservices using Java
 
-### Example C07-2: Kafka Event-Driven Communication (Mode: Full SCVHS)
+### Example C07-2: Kafka Event-Driven Communication (Mode: 3, AI-Drafted Spec)
 
 **Specify:**
-Learner writes `Spec_S05_OrderPlaced_Event.md`. Defines topic name, event schema, producer behavior (publish after order saved), consumer behavior (send email on receipt), and what happens when a malformed message arrives.
+AI drafts `Spec_S05_OrderPlaced_Event.md` from the README's pointers; learner reviews and finalizes it. Defines topic name, event schema, producer behavior (publish after order saved), consumer behavior (send email on receipt), and what happens when a malformed message arrives.
 
 **Comprehension Primitive:**
 Hand-write a minimal Kafka producer that sends a string to a topic and a consumer that logs it.
@@ -194,10 +194,10 @@ Hand-write a minimal Kafka producer that sends a string to a topic and a consume
 
 ## Agentic AI and RAG - C11: Engineering Agentic AI Systems and C12: Build RAG Based Systems (M2)
 
-### Example: RAG Pipeline (Mode: Full SCVHS; C12)
+### Example: RAG Pipeline (Mode: 3, AI-Drafted Spec; C12)
 
 **Specify:**
-Learner writes `Spec_S04_DocumentQA_RAG.md`. Defines document source, chunking strategy (512 tokens, 50-token overlap), embedding model, vector store (Chroma), retrieval top-k (5 chunks), generation prompt template (answer only from retrieved context), and expected behavior when no relevant document is found.
+AI drafts `Spec_S04_DocumentQA_RAG.md` from the README's pointers; learner reviews and finalizes it. Defines document source, chunking strategy (512 tokens, 50-token overlap), embedding model, vector store (Chroma), retrieval top-k (5 chunks), generation prompt template (answer only from retrieved context), and expected behavior when no relevant document is found.
 
 *Sample Decision Log entry:*
 > Construct: Out-of-scope handling.
@@ -207,7 +207,7 @@ Learner writes `Spec_S04_DocumentQA_RAG.md`. Defines document source, chunking s
 > How caught: Asked "What is the capital of France?" — not in the docs. Model answered "Paris." Spec was explicit: answer only from retrieved context.
 > Fix: Added to the system prompt: "If the retrieved context does not contain the answer, respond with: I could not find this information in the provided documents. Do not use knowledge outside the retrieved context."
 
-### Example: Multi-Agent System (Mode: Full SCVHS; C11)
+### Example: Multi-Agent System (Mode: 3, AI-Drafted Spec; C11)
 
 *Sample Decision Log entry:*
 > Construct: Termination condition.

@@ -54,14 +54,14 @@ scvhs/
 │
 ├── scvhs-core/                        — methodology specification
 │   ├── 00-pipeline.md                 — the five phases in full detail
-│   ├── 01-modes.md                    - the four SCVHS modes
+│   ├── 01-modes.md                    - the three SCVHS modes
 │   ├── 02-comprehension-primitive.md  — the Comprehension Primitive concept
 │   ├── 03-decision-log.md             — the Decision Log artifact
 │   └── 04-scaffolding-progression.md — scaffolding fade across sprints
 │
 ├── scvhs-templates/                   — operational artifacts for learners and content developers
 │   ├── Spec_Template.md               — generic specification template
-│   ├── AI_Decision_Log_Template.md    - index to the three per-mode Decision Log templates
+│   ├── AI_Decision_Log_Template.md    - index to the per-mode Decision Log templates
 │   └── Sprint_Design_Checklist.md     — checklist for content developers
 │
 ├── scvhs-examples/                    — worked examples by course and technology

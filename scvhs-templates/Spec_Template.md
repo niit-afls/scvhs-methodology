@@ -75,37 +75,24 @@ Before giving the spec to an AI tool, hand-write ONE minimal example of the core
 **When it applies:**
 The time budget makes hand-coding the full artifact unrealistic, but the learner must comprehend every line. Examples: full Tailwind responsive layout, complex array pipeline, multi-file Java class hierarchy.
 
----
-
-### Mode 3: Full SCVHS
-
-**What it means:**
-You specify, the AI constructs, you validate, harden, and ship. A Comprehension Primitive still applies — you hand-write one minimal construct before directing the AI, to ensure you can read what it produces.
-
-**Your role in Validate:**
-Decision Log filled construct by construct. Defective constructs get a full entry. Passing constructs get a pass recorded without a full explanation. The difference from Mode 2: you are now expected to direct the AI with precision and catch defects with little to no README guidance on what to check for.
-
-**When it applies:**
-Sprints where the learner has enough mental model to direct an agent and own the output fully. Examples: DOM interaction features, HTTP Fetch integration, REST API endpoints, Docker service definitions.
-
 **Assessment variant:**
 In assessment sprints, AI is permitted as a reference tool only. Every line must be explainable and modifiable on demand during the review.
 
 ---
 
-### Mode 4: AI-Drafted Spec (Advanced)
+### Mode 3: AI-Drafted Spec
 
 **What it means:**
-An AI tool drafts this spec from three inputs: the sprint's README, `Spec_Creation_Prompt.md`, and `Sample_Spec_Template.md`. You do not author the first draft by hand. You review it, using the same checklist a content developer applies to an AI-drafted reference spec, edit it until it is correct, and commit it as your own spec. From there, Construct, Validate, and the Decision Log all follow Mode 3 rules exactly.
+An AI tool drafts this spec from three inputs: the sprint's README, `Spec_Creation_Prompt.md`, and `Sample_Spec_Template.md`. You do not author the first draft by hand. You review it, using the same checklist a content developer applies to an AI-drafted reference spec, edit it until it is correct, and commit it as your own spec. From there, Construct, Validate, and the Decision Log all follow Mode 2 rules exactly: every construct gets a full entry, passing and failing alike.
 
 **Your role in Specify:**
 Review, not authorship. Every Constraint and Acceptance Criterion must trace back to something the README's "Writing Your Spec" section actually asked for. An unreviewed AI draft is not a valid spec.
 
 **Your role in Validate:**
-Identical to Mode 3, see above.
+Identical to Mode 2, see above.
 
 **When it applies:**
-Only when you already have demonstrated, independent Mode 3 spec-writing experience for this technology, and only when your content developer or instructor has opted this sprint into Mode 4. It is not available by default and is not a way to skip spec-writing difficulty; if you cannot yet write a Mode 3 spec independently, ask for more Mode 2/3 practice instead.
+A normal ladder rung reached once you have practiced Mode 2 for this technology and your Decision Logs show you reliably catch AI-construction defects, evidence you can also catch the equivalent gaps in an AI-drafted spec. It is not a way to skip spec-writing difficulty; it removes the writing burden, not the reviewing burden. If you cannot yet review a spec critically, ask for more Mode 2 practice instead.
 
 ---
 
@@ -260,7 +247,7 @@ the controller method."
 ---
 
 ## 4. Comprehension Primitive
-*(Required for Hybrid and Full SCVHS modes. Delete this section for Hand-First sprints.)*
+*(Required for Mode 2 and Mode 3. Delete this section for Mode 1 sprints.)*
 
 Before giving this spec to an AI tool, hand-write ONE minimal example of the core construct in this sprint.
 

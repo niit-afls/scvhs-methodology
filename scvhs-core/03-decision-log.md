@@ -102,19 +102,18 @@ For a failing construct:
 
 **Why:** In Mode 2, the explaining IS the comprehension activity. A learner who writes "looks correct" for a passing construct has not completed the entry. The cognitive work of writing "this nav element uses flex display with gap-6 between items, matching the spec requirement for a flex container on the navigation" is what builds comprehension, not the observation that it looks correct.
 
-### Mode 3 (Full SCVHS)
+### Mode 3 (AI-Drafted Spec)
 
-**Defective constructs require a full entry. Passing constructs require a pass record only.**
+**Identical to Mode 2. Every construct requires a full entry, passing and failing alike.**
 
-For a passing construct:
-- "What this construct does" — brief (one clause is sufficient)
-- "Does it match the spec?" — Yes
-- Defect, How caught, Fix applied — blank
+Mode 3 changes who drafts the spec, an AI tool drafts it and the learner reviews and
+finalizes it, but nothing about Construct, Validate, or this Decision Log's depth. Use
+the same fields, the same standard, as Mode 2 above.
 
-For a failing construct:
-- All five fields — required, specific (same as Mode 2)
-
-**Why:** Mode 3 assumes the learner has sufficient mental model to recognize correct output without laboriously explaining it. The cognitive work shifts from "explain everything" to "validate against spec, flag failures." The Decision Log records the validation result; the understanding is assumed.
+**Why:** the skill Mode 3 removes is spec-authoring, not construct-level comprehension. A
+learner who has not yet demonstrated they can explain every construct fully has no
+business skipping straight to a lighter validation standard just because the spec's first
+draft came from an AI tool.
 
 ---
 

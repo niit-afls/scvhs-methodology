@@ -20,14 +20,14 @@ Before doing anything else, define the Ship artifact.
 - [ ] **Mode declared in spec header:** The spec file has a SCVHS Mode field in the header, written in plain English (not just "Mode 2" — say what Mode 2 means for THIS sprint).
 - [ ] **Mode is correct for this sprint:** Use the decision guide:
   - Is this the learner's first encounter with this construct type? → Mode 1
-  - Is hand-coding the full artifact unrealistic in the time budget, AND is this the learner's first time validating AI output for this technology? → Mode 2
-  - Has the learner previously validated AI output for this technology AND can they derive validation criteria independently? → Mode 3
-  - Mode 4 is never selected from this decision guide. It is a separate, opt-in exception, see the next item.
+  - Is hand-coding the full artifact unrealistic in the time budget? → Mode 2
+  - Has the learner practiced Mode 2 for this technology, with Decision Logs showing they reliably catch AI-construction defects? → Mode 3
 - [ ] **Mode progression is coherent:** This sprint's mode is consistent with the previous sprint's mode for the same technology area. (Mode never regresses: once Mode 3 for a technology, stays Mode 3.)
-- [ ] **If Mode 4 is being assigned:** confirm the learner has already written independent Mode 3
-      specs for this technology in a prior sprint, and that this sprint or track deliberately teaches
-      AI-assisted spec drafting as a skill. Mode 4 is not assigned to learners who are struggling to
-      write specs; that calls for more Mode 2/3 practice, not Mode 4. See `01-modes.md`.
+- [ ] **If Mode 3 is being assigned:** confirm the learner's Mode 2 Decision Logs for this technology
+      show them reliably catching AI-construction defects, evidence they can also catch the
+      equivalent gaps in an AI-drafted spec. Mode 3 is not assigned to learners who are struggling
+      to write specs; that calls for more Mode 2 practice, not Mode 3, since Mode 3 removes the
+      writing burden, not the reviewing burden. See `01-modes.md`.
 
 ---
 
@@ -42,7 +42,7 @@ Before doing anything else, define the Ship artifact.
       "keep it simple" or "write clean code," they apply to every sprint and cannot be checked;
       find the specific rule underneath and write that instead.
 - [ ] **Technology constructs are named:** Spec uses the correct technology-specific terms for constructs (section vs div; article vs div; constructor injection vs field injection; etc.).
-- [ ] **Mode 4 only, spec was reviewed, not just accepted:** The learner drafted the spec with an AI
+- [ ] **Mode 3 only, spec was reviewed, not just accepted:** The learner drafted the spec with an AI
       tool from the README, `Spec_Creation_Prompt.md`, and `Sample_Spec_Template.md`, then reviewed
       and edited it against the "After the AI drafts the spec" checklist in
       `Spec_Creation_Prompt.md` before committing it. An unreviewed AI draft does not satisfy this
@@ -52,7 +52,7 @@ Before doing anything else, define the Ship artifact.
 
 ## Step 4: Comprehension Primitive
 
-*(Required for Mode 2, Mode 3, and Mode 4 sprints. Skip this section for Mode 1.)*
+*(Required for Mode 2 and Mode 3 sprints. Skip this section for Mode 1.)*
 
 - [ ] **Comprehension Primitive defined in spec:** Section 4 of the spec describes exactly what the learner should hand-write and in what file.
 - [ ] **Comprehension Primitive is minimal:** It is one construct, not a full feature. It fits in 10–20 minutes.
@@ -69,12 +69,13 @@ Before doing anything else, define the Ship artifact.
 
 ## Step 5: README Constraint/Acceptance-Criteria Pointers
 
-*(Thorough pointers required for Mode 1 and Mode 2 sprints. Thin to none for Mode 3 or Mode 4.)*
+*(Thorough pointers required in all three modes. These do not fade between Mode 2 and*
+*Mode 3, only who writes the spec's first draft changes.)*
 
-- [ ] **README's "Writing Your Spec" section is thorough:** For Mode 1/2, the README names the specific Constraints and Acceptance Criteria topics this sprint's spec must cover, written from the content developer's own reference-build defects (see `Practice_README_Guidance.md`).
+- [ ] **README's "Writing Your Spec" section is thorough:** the README names the specific Constraints and Acceptance Criteria topics this sprint's spec must cover, written from the content developer's own reference-build defects (see `Practice_README_Guidance.md`).
 - [ ] **Pointers are specific:** Not "handle errors well", but "What the code does when the database cannot be reached. Name the exact behaviour."
 - [ ] **Pointers name a topic, not the answer:** The learner still supplies the actual decision; the pointer only names what must be decided and what a complete answer looks like.
-- [ ] **Mode 3 and Mode 4 have thin-to-none pointers:** If the sprint is Mode 3 or Mode 4, the README's "Writing Your Spec" section is deliberately minimal or absent. This is not an oversight, it is the scaffold removal.
+- [ ] **Same pointers serve Mode 3:** Mode 3's AI-drafted spec is generated from this same README section (via `Spec_Creation_Prompt.md`). If the pointers are too thin for a learner to write from, they are too thin for the AI draft to be reviewable against either.
 
 ---
 
@@ -82,8 +83,7 @@ Before doing anything else, define the Ship artifact.
 
 - [ ] **Decision Log instructions match the mode:**
   - Mode 2: "Fill an entry for EVERY construct — passing and failing alike."
-  - Mode 3: "Fill a full entry for defective constructs. Record a pass for correct ones."
-  - Mode 4: same as Mode 3. Mode 4 changes who drafts the spec, not the Decision Log rules.
+  - Mode 3: same as Mode 2. Mode 3 changes who drafts the spec, not the Decision Log rules.
 - [ ] **Every entry is grounded in the spec:** Each entry checks its construct against a specific
       Constraint or Acceptance Criterion from that sprint's own spec, named explicitly, not the
       reviewer's outside technology knowledge and not an external checklist. If an entry can't name

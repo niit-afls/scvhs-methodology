@@ -208,9 +208,11 @@ When to apply: first encounter with a fundamental concept where the mental model
 
 The second SCVHS mode. The AI tool constructs the artifact from the learner's spec. The learner reads the AI output construct by construct, writes a Decision Log entry for EVERY construct (passing and failing), and fixes all defects. The corrected AI output ships.
 
-Distinguishing feature from Mode 3: the README gives thorough Constraint and Acceptance Criteria pointers, so the learner knows in advance what to check for, already written into the spec they authored from those pointers. The Decision Log requires an explanation of every construct, not just defective ones.
+The README gives thorough Constraint and Acceptance Criteria pointers, so the learner knows in advance what to check for, already written into the spec they authored from those pointers. The Decision Log requires an explanation of every construct, not just defective ones.
 
 The explain-every-construct requirement is the comprehension mechanism. Even a passing construct requires an entry explaining what it does. This cannot be skipped.
+
+Distinguishing feature from Mode 3 (AI-Drafted Spec, below): who writes the spec's first draft. Construct, Validate, and the Decision Log are identical in both modes.
 
 When to apply: the full artifact is too complex to hand-code in the available time, but the learner must comprehend every line.
 
@@ -232,13 +234,12 @@ The invariant across all modes: the engineer specifies before anything is built,
 
 The parameter that determines who performs the Specify and Construct phases and what scaffolding is provided in the Validate phase for a given sprint. Declared in the header of every Spec file.
 
-Four modes exist:
+Three modes exist:
 - Mode 1: Hand-First + Validate AI
 - Mode 2: Hybrid / Generate-then-Explain
-- Mode 3: Full SCVHS
-- Mode 4: AI-Drafted Spec (Advanced), see below
+- Mode 3: AI-Drafted Spec, see below
 
-Mode is a per-sprint decision, not a per-learner label. A learner may be in Mode 3 for one technology and Mode 1 for another in the same course. Mode 4 is the one exception to "per-sprint, freely assigned": it also requires the learner already hold Mode 3 eligibility for that technology, since it is an opt-in exception layered on top of Mode 3, not a further rung most learners climb to.
+Mode is a per-sprint decision, not a per-learner label. A learner may be in Mode 3 for one technology and Mode 1 for another in the same course. Mode 3 is reached after Mode 2 experience in that technology, the same way Mode 2 follows Mode 1; it is a normal ladder rung, not a gated exception.
 
 ---
 
@@ -246,12 +247,13 @@ Mode is a per-sprint decision, not a per-learner label. A learner may be in Mode
 
 The SCVHS model for progressively withdrawing support structures as learner mastery grows. Derived from Vygotsky's Zone of Proximal Development and Wood, Bruner & Ross's scaffolding theory.
 
-In SCVHS, scaffolding fades across three dimensions as mode advances from 1 to 3:
+In SCVHS, scaffolding fades across two dimensions as mode advances from 1 to 3:
 1. Construction support: from full hand-construction (Mode 1) to AI-construction with validation (Modes 2–3).
-2. Validation support: from thorough README Constraint/Acceptance-Criteria pointers (Modes 1–2) to independently derived criteria (Mode 3).
-3. Decision Log depth: from explain-every-construct (Mode 2) to validate-and-flag-defects (Mode 3).
+2. Specify authorship: from learner-authored (Modes 1–2) to AI-drafted and learner-reviewed (Mode 3).
 
-Mode 4 fades a fourth, separate dimension not touched by Modes 1–3: Specify support, from learner-authored (Modes 1–3) to AI-drafted and learner-reviewed (Mode 4). It is layered on top of Mode 3, not a continuation of the same three-dimension fade, and is opt-in rather than something every learner is expected to reach.
+What does not fade between Mode 2 and Mode 3: README Constraint/Acceptance-Criteria pointers stay
+thorough in both, and Decision Log depth stays full-entry-per-construct in both. Only Specify
+authorship changes.
 
 The invariant across all scaffolding levels: cognitive engagement (specification, evaluation, ownership) stays constant.
 
@@ -299,51 +301,40 @@ A SPECIFY output (a Spec file) must be:
   An empty or padded Constraints section is worse than an omitted one.
 - Written before any code is written.
 
-The spec is normally learner-authored. The one exception is Mode 4 (AI-Drafted Spec), where an AI
+The spec is normally learner-authored. The one exception is Mode 3 (AI-Drafted Spec), where an AI
 tool drafts the spec and the learner reviews and finalizes it before it directs construction; see
 below.
 
 ---
 
-## Full SCVHS (Mode 3)
+## AI-Drafted Spec (Mode 3)
 
-The third SCVHS mode. The AI tool constructs the artifact from the learner's spec. The learner validates construct by construct but only writes full Decision Log entries for defective constructs (passing constructs get a pass recorded, not a full explanation). The README gives no such pointers; the learner derives their own validation criteria from the spec.
-
-This is the production engineering mode. It is the way a proficient engineer using AI tools works in industry.
-
-Distinguishing feature from Mode 2: the removal of the README's Constraint/Acceptance-Criteria pointers is the key scaffold removal. The learner must know what to check for without being told.
-
-When to apply: the learner has sufficient mental model from previous sprints to direct AI with precision and independently catch defects without a pre-supplied checklist.
-
----
-
-## AI-Drafted Spec (Mode 4)
-
-The fourth SCVHS mode. An AI tool drafts the spec from three inputs: the sprint's README, the
+The third SCVHS mode. An AI tool drafts the spec from three inputs: the sprint's README, the
 generic `Spec_Creation_Prompt.md`, and the raw `Sample_Spec_Template.md`. The learner reviews the
 draft, edits it until it is correct, and commits it as their own spec before construction begins.
-Construct, Validate, and the Decision Log then follow Mode 3 rules exactly: the AI tool constructs
-from the reviewed spec, the learner validates construct by construct, and only defective constructs
-get a full Decision Log entry.
+Construct, Validate, and the Decision Log then follow Mode 2 rules exactly: the AI tool constructs
+from the reviewed spec, and the learner writes a full Decision Log entry for every construct,
+passing and failing alike.
 
-Mode 4 is not a fourth rung on the Mode 1 to 3 ladder. It is a narrow, opt-in exception, available
-only to learners who have already demonstrated independent Mode 3 spec-writing for this technology,
-and assigned at the content developer's or instructor's discretion, typically for an advanced or
-capstone track where AI-assisted spec drafting is itself the skill being taught. It is not a
-substitute for learners who find spec-writing hard; see Practice README, above, for why AI drafting
-the spec removes the skill the Specify stage exists to build in every other mode.
+Mode 3 is a normal ladder rung reached after Mode 2 experience in a technology, the same way Mode 2
+follows Mode 1. It is not gated behind any other mode's mastery beyond that; assigned once a
+learner's Mode 2 Decision Logs show they reliably catch AI-construction defects, evidence they can
+also catch the equivalent gaps in an AI-drafted spec. It is not a substitute for learners who find
+spec-writing hard, it removes the writing burden, not the reviewing burden; see Practice README,
+above, for why AI drafting the spec still requires the learner to review it critically.
 
-Distinguishing feature from Mode 3: who writes the spec's first draft. Everything downstream of
-Specify (Construct, Validate, Decision Log) is identical to Mode 3.
+Distinguishing feature from Mode 2: who writes the spec's first draft. Everything downstream of
+Specify (Construct, Validate, Decision Log) is identical to Mode 2.
 
-When to apply: the learner already holds Mode 3 eligibility for this technology, and the sprint or
-track is deliberately teaching AI-assisted specification as a skill in its own right.
+When to apply: the learner has practiced Mode 2 for this technology and their Decision Logs show
+they can reliably review AI output, evidence they are ready to reliably review an AI-drafted spec
+too.
 
 ---
 
 ## VALIDATE (Phase 3)
 
-The third SCVHS phase. The engineer reads the constructed artifact against the spec, construct by construct. Every construct gets an entry in the Decision Log (Mode 2) or a pass/fail record (Mode 3 and Mode 4, with full entries for defects only).
+The third SCVHS phase. The engineer reads the constructed artifact against the spec, construct by construct. Every construct gets a full Decision Log entry in Mode 2 and Mode 3 alike, passing and failing constructs both; in Mode 1, entries record what the AI got wrong and what it got right against the learner's own hand-built reference.
 
 Validation is active, not passive. It uses tools: W3C Validator, TypeScript compiler, browser DevTools, Postman, docker build, pytest, etc. "It looks right" is not a validation method.
 

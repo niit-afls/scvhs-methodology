@@ -1,5 +1,8 @@
 # AI Decision Log: Mode 2 (Hybrid / Generate-then-Explain)
 
+*(Mode 3 learners: use this same template. Mode 3 only changes who drafts the spec;
+Construct, Validate, and this log are unchanged from Mode 2.)*
+
 **Learner:**
 **Sprint:** [Number], [Title]
 **Date:**
