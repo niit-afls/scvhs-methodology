@@ -93,6 +93,22 @@ In assessment sprints, AI is permitted as a reference tool only. Every line must
 
 ---
 
+### Mode 4: AI-Drafted Spec (Advanced)
+
+**What it means:**
+An AI tool drafts this spec from three inputs: the sprint's README, `Spec_Creation_Prompt.md`, and `Sample_Spec_Template.md`. You do not author the first draft by hand. You review it, using the same checklist a content developer applies to an AI-drafted reference spec, edit it until it is correct, and commit it as your own spec. From there, Construct, Validate, and the Decision Log all follow Mode 3 rules exactly.
+
+**Your role in Specify:**
+Review, not authorship. Every Constraint and Acceptance Criterion must trace back to something the README's "Writing Your Spec" section actually asked for. An unreviewed AI draft is not a valid spec.
+
+**Your role in Validate:**
+Identical to Mode 3, see above.
+
+**When it applies:**
+Only when you already have demonstrated, independent Mode 3 spec-writing experience for this technology, and only when your content developer or instructor has opted this sprint into Mode 4. It is not available by default and is not a way to skip spec-writing difficulty; if you cannot yet write a Mode 3 spec independently, ask for more Mode 2/3 practice instead.
+
+---
+
 ## Comprehension Primitive — What It Is
 
 A Comprehension Primitive is a short hand-written piece of code you produce BEFORE giving this spec to an AI tool.

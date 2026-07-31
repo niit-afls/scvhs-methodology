@@ -17,8 +17,8 @@ First, identify from the README:
 - The technology and artifact type for this sprint (for example: a React component, an HTML page, a
   Dockerfile, a Spring Boot class, a CI/CD pipeline file, a properties file, a CSS stylesheet).
 - The SCVHS Mode this sprint uses. If the README does not name a Comprehension Primitive
-  requirement, this is Mode 1: skip section 3 below entirely. If it does, this is Mode 2 or 3: keep
-  section 3.
+  requirement, this is Mode 1: skip section 3 below entirely. If it does, this is Mode 2, 3, or 4:
+  keep section 3.
 - The one core technique this sprint is introducing for the first time (the thing the
   Comprehension Primitive is meant to build reading literacy for).
 - Whether the README's "Writing Your Spec" section lists any Constraints at all. Constraints are

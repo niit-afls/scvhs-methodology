@@ -1,20 +1,23 @@
-# SCVHS Modes — The Three Operating Modes
+# SCVHS Modes: The Four Operating Modes
 
 > The SCVHS mode determines who performs the Construct phase and what scaffolding exists in Validate.  
 > Mode is a per-sprint decision declared in the header of every Spec file.
 
 ---
 
-## The Three Modes
+## The Four Modes
 
-| Mode | Name | Who constructs | Key scaffold in Validate |
-|---|---|---|---|
-| 1 | Hand-First + Validate AI | Learner by hand | AI version is the foil; instructor provides Agent Failure Modes list |
-| 2 | Hybrid / Generate-then-Explain | AI tool | Instructor provides Agent Failure Modes list; learner explains every construct |
-| 3 | Full SCVHS | AI tool | No Agent Failure Modes list; learner validates against spec independently |
+| Mode | Name | Who constructs | Who specifies | Key scaffold in Validate |
+|---|---|---|---|---|
+| 1 | Hand-First + Validate AI | Learner by hand | Learner | AI version is the foil; instructor provides Agent Failure Modes list |
+| 2 | Hybrid / Generate-then-Explain | AI tool | Learner | Instructor provides Agent Failure Modes list; learner explains every construct |
+| 3 | Full SCVHS | AI tool | Learner | No Agent Failure Modes list; learner validates against spec independently |
+| 4 | AI-Drafted Spec (Advanced) | AI tool | AI tool, drafted; learner reviews and finalizes | Same as Mode 3, no Agent Failure Modes list; learner validates against the spec they reviewed |
 
-The workflow steps are **identical** in all three modes: Specify → Construct → Validate → Harden → Ship.  
-The difference is not the steps — it is the scaffolding and the level of independence.
+The workflow steps are **identical** in all four modes: Specify → Construct → Validate → Harden → Ship.  
+The difference is not the steps; it is who does the writing at each step, the scaffolding, and the level of independence.
+
+Modes 1 through 3 fade CONSTRUCT and VALIDATE scaffolding as the learner's mental model grows (see [04-scaffolding-progression.md](04-scaffolding-progression.md)). Mode 4 is a different, narrower exception: it fades SPECIFY itself, and only for learners who have already earned Mode 3 independence. It is not the next rung after Mode 3; see "When to apply" under Mode 4 below.
 
 ---
 
@@ -132,6 +135,41 @@ The corrected AI output. All defects fixed. Decision Log records defects and fix
 
 ---
 
+## Mode 4: AI-Drafted Spec (Advanced)
+
+### Summary
+An AI tool drafts the spec from three inputs: the sprint README, a spec-creation prompt, and the spec template. You review and finalize the draft. AI builds from it. You validate and log exactly as in Mode 3.
+
+### Specify
+Three inputs go to the AI tool: the sprint's `README.md`, `Spec_Creation_Prompt.md`, and `Sample_Spec_Template.md` (see [../scvhs-templates/Spec_Creation_Prompt.md](../scvhs-templates/Spec_Creation_Prompt.md)). The AI tool drafts `Spec_S0N_[Title].md` from these three inputs. The learner does not write the first draft by hand.
+
+The learner then reviews the draft using the same checklist a content developer uses to review an AI-drafted reference spec: every Constraint and Acceptance Criterion traces back to something the README's "Writing Your Spec" section actually asked for, nothing invented, nothing missing; any scope-exclusion constraint matches an actual later-sprint topic; no "Files to Commit" section or meta-commentary. The learner edits the draft until it is correct, then commits it as their own spec. An unreviewed AI draft is not a valid Mode 4 spec.
+
+### Construction
+Same as Mode 3: the AI tool constructs the artifact from the learner-reviewed spec. The Comprehension Primitive is completed before directing the AI, at the content developer's discretion for shortening if the learner has written this exact construct type many times before (same rule as Mode 3).
+
+### Validate activity
+Identical to Mode 3. The Decision Log records a pass or fail for every construct; only defective constructs require a full entry. The spec being AI-drafted does not relax this: the learner validates against a spec they reviewed and signed off on, not against the AI's intentions.
+
+### Scaffolding provided
+None for validation criteria, same as Mode 3. What Mode 4 removes that Mode 3 keeps is the requirement that the learner author the spec's first draft by hand. This is a scaffold removal in a different phase from Modes 1→3, which fade CONSTRUCT and VALIDATE support: Mode 4 fades SPECIFY support instead.
+
+### What ships
+The reviewed and finalized spec, the Comprehension Primitive, the corrected AI-constructed artifact, and the Decision Log: the same artifact set as Mode 3.
+
+### When to apply
+Mode 4 is a narrow, instructor-gated exception, not a destination every learner reaches. It is reserved for advanced developers who have already operated in Mode 3 for this technology across multiple prior sprints and have demonstrated they can write a precise spec independently, and for tracks where directing AI-assisted spec drafting is itself the skill being taught (for example, an advanced capstone simulating a production AI-native workflow).
+
+Mode 4 is not a fix for learners who find spec-writing hard. If a learner cannot yet write a Mode 3 spec independently, the answer is more Mode 2/3 practice, not Mode 4. See `Practice_README_Guidance.md` for why having AI draft the spec removes the skill the Specify stage exists to build, in every mode except this narrowly-scoped one.
+
+**Characteristic questions:** "Has this learner already written independent Mode 3 specs for this technology?" and "Is AI-assisted spec drafting itself part of what this sprint or track is teaching?" If both are yes, Mode 4 may apply, at the content developer's or instructor's discretion.
+
+**Examples:**
+- An advanced or capstone sprint where the learner directs an AI tool through the full pipeline, including spec drafting, to simulate a production AI-native engineering workflow.
+- A sprint explicitly designed to teach AI-assisted specification as a skill in its own right, for learners who have already mastered manual specification in Mode 3.
+
+---
+
 ## The One-Line Distinction: Mode 2 vs Mode 3
 
 This is the most common source of confusion.
@@ -187,6 +225,8 @@ Can the learner derive validation criteria from the spec independently?
   YES → Mode 3 (Full SCVHS)
 ```
 
+**Mode 4 is not part of this decision tree.** It is a separate, opt-in exception layered on top of Mode 3 eligibility; see "When to apply" under Mode 4 above. Never assign Mode 4 as the automatic next step once a learner reaches Mode 3; most learners should stay in Mode 3.
+
 ---
 
 ## Common Mode Assignment Errors
@@ -198,3 +238,5 @@ Can the learner derive validation criteria from the spec independently?
 | Skipping Mode 2 | Going from Mode 1 directly to Mode 3 | Mode 2 is the bridge — learn to read AI code before being expected to catch defects without a checklist |
 | Treating mode as permanent | Assigning a learner a "Mode 2 learner" label | Mode is per-sprint and per-technology, not a learner property |
 | No mode declaration in spec | Content developer forgets to declare mode in spec header | Every spec must have SCVHS Mode in the header — see Spec_Template.md |
+| Treating Mode 4 as the next rung after Mode 3 | Assigning Mode 4 to every learner who reaches Mode 3, as if it were mandatory progression | Mode 4 is a narrow, opt-in exception for advanced tracks; eligibility is prior demonstrated Mode 3 independence, not simply reaching Mode 3 |
+| Using Mode 4 to skip spec-writing difficulty | Assigning Mode 4 because learners are struggling to write specs, rather than because they have mastered it | If the learner cannot write a Mode 3 spec independently, give more Mode 2/3 practice; Mode 4 is not remedial |

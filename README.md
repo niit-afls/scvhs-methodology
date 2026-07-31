@@ -54,7 +54,7 @@ scvhs/
 │
 ├── scvhs-core/                        — methodology specification
 │   ├── 00-pipeline.md                 — the five phases in full detail
-│   ├── 01-modes.md                    — the three SCVHS modes
+│   ├── 01-modes.md                    - the four SCVHS modes
 │   ├── 02-comprehension-primitive.md  — the Comprehension Primitive concept
 │   ├── 03-decision-log.md             — the Decision Log artifact
 │   └── 04-scaffolding-progression.md — scaffolding fade across sprints
@@ -91,7 +91,7 @@ scvhs/
 
 **Step 3:** Use [Spec_Template.md](scvhs-templates/Spec_Template.md) to write the learner-facing spec for each sprint.
 
-**Step 4:** See [C04-Web-Applications/](scvhs-examples/C04-Web-Applications/) for worked examples at all three mode levels.
+**Step 4:** See [C04-Web-Applications/](scvhs-examples/C04-Web-Applications/) for worked examples across mode levels.
 
 ---
 

@@ -12,6 +12,7 @@ SPECIFY → CONSTRUCT → VALIDATE → HARDEN → SHIP
 ```
 
 The phases are invariant. What changes between modes is:
+- Who performs SPECIFY (learner, or AI-drafted and learner-reviewed in Mode 4)
 - Who performs CONSTRUCT (human, AI tool, or both)
 - What scaffolding is provided in VALIDATE
 - How deeply the Decision Log entries are written
@@ -27,6 +28,8 @@ The learner writes a `Spec_S0N_[Title].md` file that defines:
 - What the artifact is and what it does
 - The structure, constraints, and parameters (technology-stack specific)
 - The Acceptance Criteria — a binary pass/fail checklist used in VALIDATE
+
+**Exception, Mode 4 only:** an AI tool drafts the spec from the README, `Spec_Creation_Prompt.md`, and `Sample_Spec_Template.md`. The learner reviews and finalizes the draft before it is used to direct construction; an unreviewed draft is not a valid spec. See [01-modes.md](01-modes.md).
 
 ### The invariant
 No code is written before the spec is complete. The spec is the contract. Any AI output that violates the spec is a defect, regardless of whether the output looks correct or runs without errors.
@@ -62,19 +65,20 @@ Determined by the SCVHS Mode:
 | Mode 1: Hand-First + Validate AI | Learner by hand |
 | Mode 2: Hybrid | AI tool, directed by spec |
 | Mode 3: Full SCVHS | AI tool, directed by spec |
+| Mode 4: AI-Drafted Spec (Advanced) | AI tool, directed by the learner-reviewed AI-drafted spec |
 
 ### The invariant
 Construction follows the spec, not instinct, habit, or a remembered pattern. In AI-construction modes, the spec is passed to the AI tool verbatim or near-verbatim — the learner does not guide the AI with verbal additions that are not in the spec.
 
 ### Comprehension Primitive
-In Modes 2 and 3, the Comprehension Primitive is completed BEFORE directing the AI. See [02-comprehension-primitive.md](02-comprehension-primitive.md).
+In Modes 2, 3, and 4, the Comprehension Primitive is completed BEFORE directing the AI. See [02-comprehension-primitive.md](02-comprehension-primitive.md).
 
 ### AI direction
-In Modes 2 and 3, the learner gives the full spec to the AI tool. The AI generates the artifact. The learner saves the AI-generated file with a name that makes it identifiable as AI output (e.g., `portfolio-ai-generated.html`, `styles-ai-generated.css`). This file is committed alongside the corrected version for comparison.
+In Modes 2, 3, and 4, the learner gives the full spec to the AI tool (in Mode 4, the spec they reviewed and finalized after the AI drafted it). The AI generates the artifact. The learner saves the AI-generated file with a name that makes it identifiable as AI output (e.g., `portfolio-ai-generated.html`, `styles-ai-generated.css`). This file is committed alongside the corrected version for comparison.
 
 ### Output
 - In Mode 1: learner's hand-built artifact + AI-generated version
-- In Modes 2–3: AI-generated version (corrected version produced during HARDEN)
+- In Modes 2–4: AI-generated version (corrected version produced during HARDEN)
 
 ---
 
@@ -93,7 +97,7 @@ A construct is one logical unit of the technology in use:
 The learner reads one construct, writes a Decision Log entry, reads the next construct, writes the next entry. The Decision Log is filled in real time, not after finishing the whole file.
 
 ### The Decision Log
-Every construct gets an entry. For Mode 2: every construct, pass or fail, requires an explanation of what it does. For Mode 3: every construct gets a pass/fail record; defective constructs get a full entry.
+Every construct gets an entry. For Mode 2: every construct, pass or fail, requires an explanation of what it does. For Mode 3 and Mode 4: every construct gets a pass/fail record; defective constructs get a full entry. Mode 4 follows the Mode 3 Decision Log rules exactly, since the spec being AI-drafted only changes SPECIFY, not VALIDATE.
 
 See [03-decision-log.md](03-decision-log.md) for the full Decision Log specification.
 

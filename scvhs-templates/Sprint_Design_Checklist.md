@@ -22,7 +22,12 @@ Before doing anything else, define the Ship artifact.
   - Is this the learner's first encounter with this construct type? → Mode 1
   - Is hand-coding the full artifact unrealistic in the time budget, AND is this the learner's first time validating AI output for this technology? → Mode 2
   - Has the learner previously validated AI output for this technology AND can they derive validation criteria independently? → Mode 3
+  - Mode 4 is never selected from this decision guide. It is a separate, opt-in exception, see the next item.
 - [ ] **Mode progression is coherent:** This sprint's mode is consistent with the previous sprint's mode for the same technology area. (Mode never regresses: once Mode 3 for a technology, stays Mode 3.)
+- [ ] **If Mode 4 is being assigned:** confirm the learner has already written independent Mode 3
+      specs for this technology in a prior sprint, and that this sprint or track deliberately teaches
+      AI-assisted spec drafting as a skill. Mode 4 is not assigned to learners who are struggling to
+      write specs; that calls for more Mode 2/3 practice, not Mode 4. See `01-modes.md`.
 
 ---
 
@@ -33,12 +38,17 @@ Before doing anything else, define the Ship artifact.
 - [ ] **Acceptance criteria are binary pass/fail:** Every criterion can be verified with a tool, in a browser, in a terminal, or by reading the code. Remove any criterion that requires subjective judgment.
 - [ ] **Constraints section present:** Rules that apply regardless of whether the output looks correct (no !important; no hardcoded secrets; all inputs validated; etc.).
 - [ ] **Technology constructs are named:** Spec uses the correct technology-specific terms for constructs (section vs div; article vs div; constructor injection vs field injection; etc.).
+- [ ] **Mode 4 only, spec was reviewed, not just accepted:** The learner drafted the spec with an AI
+      tool from the README, `Spec_Creation_Prompt.md`, and `Sample_Spec_Template.md`, then reviewed
+      and edited it against the "After the AI drafts the spec" checklist in
+      `Spec_Creation_Prompt.md` before committing it. An unreviewed AI draft does not satisfy this
+      item.
 
 ---
 
 ## Step 4: Comprehension Primitive
 
-*(Required for Mode 2 and Mode 3 sprints. Skip this section for Mode 1.)*
+*(Required for Mode 2, Mode 3, and Mode 4 sprints. Skip this section for Mode 1.)*
 
 - [ ] **Comprehension Primitive defined in spec:** Section 4 of the spec describes exactly what the learner should hand-write and in what file.
 - [ ] **Comprehension Primitive is minimal:** It is one construct, not a full feature. It fits in 10–20 minutes.
@@ -55,12 +65,12 @@ Before doing anything else, define the Ship artifact.
 
 ## Step 5: Agent Failure Modes
 
-*(Required for Mode 1 and Mode 2 sprints. Not provided for Mode 3.)*
+*(Required for Mode 1 and Mode 2 sprints. Not provided for Mode 3 or Mode 4.)*
 
 - [ ] **Agent Failure Modes list included:** The sprint design (CTKS Practice_Notes or sprint brief) includes a pre-researched list of the specific mistakes AI tools make for this technology.
 - [ ] **Failure modes are specific:** Not "AI makes CSS errors" — "AI uses !important to resolve specificity conflicts; AI uses px instead of rem for font sizes; AI uses desktop-first breakpoints instead of mobile-first."
 - [ ] **Failure modes are observable:** Each failure mode describes something the learner can check with a tool or by reading the code.
-- [ ] **Mode 3 has NO failure modes list:** If the sprint is Mode 3, the Agent Failure Modes list is intentionally absent. This is not an oversight — it is the scaffold removal.
+- [ ] **Mode 3 and Mode 4 have NO failure modes list:** If the sprint is Mode 3 or Mode 4, the Agent Failure Modes list is intentionally absent. This is not an oversight, it is the scaffold removal.
 
 ---
 
@@ -69,6 +79,7 @@ Before doing anything else, define the Ship artifact.
 - [ ] **Decision Log instructions match the mode:**
   - Mode 2: "Fill an entry for EVERY construct — passing and failing alike."
   - Mode 3: "Fill a full entry for defective constructs. Record a pass for correct ones."
+  - Mode 4: same as Mode 3. Mode 4 changes who drafts the spec, not the Decision Log rules.
 - [ ] **Construct granularity specified:** The sprint brief makes clear what counts as "one construct" for this technology (e.g., "one rule set" for CSS; "one endpoint method" for Spring Boot).
 - [ ] **Decision Log file named and versioned:** Sprint materials specify the Decision Log filename:
       `AI_Decision_Log_S[NN]_v1.md`, `_v2.md` for any later revision, never edited in place.

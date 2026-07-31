@@ -77,6 +77,14 @@ The learner has sufficient mental model and has practiced Mode 2 validation enou
 
 ---
 
+## Mode 4 Sits Outside This Ladder
+
+Modes 1 through 3 are a single ladder: the fade happens within CONSTRUCT and VALIDATE, and every learner is expected to climb it for every technology area over the course of a program.
+
+Mode 4 (AI-Drafted Spec) is not the next rung. It fades a different phase, SPECIFY, and it is not something every learner is expected to reach. It is available only after a learner has already earned Mode 3 independence for a technology, and only when a content developer or instructor deliberately opts a sprint into it, typically an advanced or capstone track where directing AI-assisted spec drafting is itself the skill being taught. Most learners should finish a course still in Mode 3 for most technology areas, never having used Mode 4 at all; that is not a gap, it is the expected outcome. See [01-modes.md](01-modes.md) for the full Mode 4 specification.
+
+---
+
 ## The Scaffolding Fade Is Not Linear
 
 The mode does not simply tick from 1 to 2 to 3 across all sprints simultaneously. Each technology area has its own scaffolding ladder:

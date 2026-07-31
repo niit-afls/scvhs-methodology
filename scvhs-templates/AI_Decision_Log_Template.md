@@ -45,6 +45,8 @@ This log is your record of the VALIDATE and HARDEN phases. You fill it in **as y
 
 **Mode 3 (Full SCVHS) note:** Defective constructs get a full entry. Passing constructs: record "Yes" in "Does it match the spec?" and a brief description. Full explanation is not required for passing constructs in Mode 3.
 
+**Mode 4 (AI-Drafted Spec, Advanced) note:** Identical to the Mode 3 note above. Mode 4 only changes who drafts the spec in Specify; Validate and this Decision Log follow Mode 3 rules exactly.
+
 **Standards:**
 - Be specific. "AI used div instead of article" — not "AI was wrong."
 - Reference the spec. "Spec required exactly one h1 — AI generated two."

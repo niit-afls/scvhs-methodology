@@ -10,7 +10,7 @@
 
 ## 2. Comprehension Primitive
 
-*(Required for Mode 2 and Mode 3 only. Delete this entire section if the README's mode is Mode 1.)*
+*(Required for Mode 2, Mode 3, and Mode 4. Delete this entire section if the README's mode is Mode 1.)*
 
 ```[language]
 [One minimal example, in the smallest meaningful unit for this technology, demonstrating the core
