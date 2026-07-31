@@ -63,14 +63,14 @@ Before doing anything else, define the Ship artifact.
 
 ---
 
-## Step 5: Agent Failure Modes
+## Step 5: README Constraint/Acceptance-Criteria Pointers
 
-*(Required for Mode 1 and Mode 2 sprints. Not provided for Mode 3 or Mode 4.)*
+*(Thorough pointers required for Mode 1 and Mode 2 sprints. Thin to none for Mode 3 or Mode 4.)*
 
-- [ ] **Agent Failure Modes list included:** The sprint design (CTKS Practice_Notes or sprint brief) includes a pre-researched list of the specific mistakes AI tools make for this technology.
-- [ ] **Failure modes are specific:** Not "AI makes CSS errors" — "AI uses !important to resolve specificity conflicts; AI uses px instead of rem for font sizes; AI uses desktop-first breakpoints instead of mobile-first."
-- [ ] **Failure modes are observable:** Each failure mode describes something the learner can check with a tool or by reading the code.
-- [ ] **Mode 3 and Mode 4 have NO failure modes list:** If the sprint is Mode 3 or Mode 4, the Agent Failure Modes list is intentionally absent. This is not an oversight, it is the scaffold removal.
+- [ ] **README's "Writing Your Spec" section is thorough:** For Mode 1/2, the README names the specific Constraints and Acceptance Criteria topics this sprint's spec must cover, written from the content developer's own reference-build defects (see `Practice_README_Guidance.md`).
+- [ ] **Pointers are specific:** Not "handle errors well", but "What the code does when the database cannot be reached. Name the exact behaviour."
+- [ ] **Pointers name a topic, not the answer:** The learner still supplies the actual decision; the pointer only names what must be decided and what a complete answer looks like.
+- [ ] **Mode 3 and Mode 4 have thin-to-none pointers:** If the sprint is Mode 3 or Mode 4, the README's "Writing Your Spec" section is deliberately minimal or absent. This is not an oversight, it is the scaffold removal.
 
 ---
 
@@ -80,6 +80,10 @@ Before doing anything else, define the Ship artifact.
   - Mode 2: "Fill an entry for EVERY construct — passing and failing alike."
   - Mode 3: "Fill a full entry for defective constructs. Record a pass for correct ones."
   - Mode 4: same as Mode 3. Mode 4 changes who drafts the spec, not the Decision Log rules.
+- [ ] **Every entry is grounded in the spec:** Each entry checks its construct against a specific
+      Constraint or Acceptance Criterion from that sprint's own spec, named explicitly, not the
+      reviewer's outside technology knowledge and not an external checklist. If an entry can't name
+      which line of the spec it's checking against, it isn't a valid entry.
 - [ ] **Construct granularity specified:** The sprint brief makes clear what counts as "one construct" for this technology (e.g., "one rule set" for CSS; "one endpoint method" for Spring Boot).
 - [ ] **Decision Log file named and versioned:** Sprint materials specify the Decision Log filename:
       `AI_Decision_Log_S[NN]_v1.md`, `_v2.md` for any later revision, never edited in place.

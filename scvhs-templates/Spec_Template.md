@@ -83,7 +83,7 @@ The time budget makes hand-coding the full artifact unrealistic, but the learner
 You specify, the AI constructs, you validate, harden, and ship. A Comprehension Primitive still applies — you hand-write one minimal construct before directing the AI, to ensure you can read what it produces.
 
 **Your role in Validate:**
-Decision Log filled construct by construct. Defective constructs get a full entry. Passing constructs get a pass recorded without a full explanation. The difference from Mode 2: you are now expected to direct the AI with precision and catch defects without an instructor-provided Agent Failure Modes list.
+Decision Log filled construct by construct. Defective constructs get a full entry. Passing constructs get a pass recorded without a full explanation. The difference from Mode 2: you are now expected to direct the AI with precision and catch defects with little to no README guidance on what to check for.
 
 **When it applies:**
 Sprints where the learner has enough mental model to direct an agent and own the output fully. Examples: DOM interaction features, HTTP Fetch integration, REST API endpoints, Docker service definitions.

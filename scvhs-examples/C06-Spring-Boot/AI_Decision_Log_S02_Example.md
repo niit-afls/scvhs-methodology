@@ -36,7 +36,7 @@ Accepts an Event JSON body, delegates creation to the service, and returns the c
 `No`
 
 **Defect found:**
-AI returned `ResponseEntity.ok(created)` — status 200 with no Location header. Spec requires 201 with `Location: /api/events/{id}`. (This is Agent Failure Mode 2 on the sprint handout: AI returns 200 for creates.)
+AI returned `ResponseEntity.ok(created)` — status 200 with no Location header. Spec requires 201 with `Location: /api/events/{id}`.
 
 **How I caught it:**
 Ran the provided Postman collection; the POST assertion failed on status. Cross-checked spec section 2 table.
@@ -58,7 +58,7 @@ Entity annotations marking the class for JPA persistence.
 AI generated `import javax.persistence.Entity;` — the pre-Spring-Boot-3 namespace. Project uses Jakarta; this does not compile. Spec constraint: all imports `jakarta.*`.
 
 **How I caught it:**
-Compiler error on first build. Recognized it from the Agent Failure Modes handout (javax vs jakarta).
+Compiler error on first build. Confirmed against the spec's Constraints section, which requires `jakarta.*` imports.
 
 **Fix applied:**
 Replaced all `javax.persistence.*` imports with `jakarta.persistence.*`.
@@ -108,7 +108,7 @@ Returns the event for a known id and 404 for an unknown one.
 Constructor injection throughout; clean layer separation for GET/DELETE paths; correct `@RestController` and mapping annotations; DELETE returning 204.
 
 **Patterns in the defects:**
-Two of three defects were on the sprint's Agent Failure Modes handout (200-for-create, javax imports) — the list works. The third (logic in controller) was caught by reading against the Constraints section, which is why constraints must be explicit in every spec.
+All three defects (200-for-create, javax imports, logic in controller) were caught by reading construct-by-construct against the spec's own Acceptance Criteria and Constraints sections, not a separate checklist, which is why both sections must be explicit and complete in every spec.
 
 ## Reflection
 

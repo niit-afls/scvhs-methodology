@@ -5,13 +5,22 @@
 
 ---
 
-## Agent Failure Modes
+## Agent Failure Modes (retired 2026-07-31)
 
-A pre-researched list of the specific mistakes that AI code generation tools typically make when constructing an artifact for a given technology area. Provided by the content developer in Mode 1 and Mode 2 sprint designs. Tells the learner what to look for before they read the AI output.
+Formerly: a separate, content-developer-authored list of the specific mistakes AI code
+generation tools typically make for a given technology area, provided alongside the spec
+in Mode 1 and Mode 2 sprint designs, tells the learner what to look for before they read
+the AI output.
 
-Removed in Mode 3 — the learner is expected to derive their own validation criteria from the spec.
-
-Examples for HTML: multiple h1 elements, missing lang attribute, div soup (generic divs used instead of semantic elements), non-descriptive link text.
+Retired as a standalone artifact: it duplicated work the methodology already requires.
+Practice README (below) already instructs content developers to write the README's
+Constraint and Acceptance Criteria pointers from their own reference-build defects, the
+same pre-researched "what commonly goes wrong" knowledge an Agent Failure Modes list would
+contain, delivered through the spec the learner writes instead of a second document. What
+now distinguishes Mode 2 from Mode 3 is whether the README gives those pointers at all
+(Mode 2: thorough; Mode 3: thin to none), not a separate checklist. See Hand-First +
+Validate AI (Mode 1), Hybrid / Generate-then-Explain (Mode 2), and Practice README, below,
+for the current mechanism.
 Examples for CSS: !important to resolve specificity conflicts, magic numbers instead of a spacing scale, px instead of rem for font sizes.
 
 **Cross-technology failure mode, worth including in nearly every progressive-curriculum sprint
@@ -191,7 +200,7 @@ When to apply: first encounter with a fundamental concept where the mental model
 
 The second SCVHS mode. The AI tool constructs the artifact from the learner's spec. The learner reads the AI output construct by construct, writes a Decision Log entry for EVERY construct (passing and failing), and fixes all defects. The corrected AI output ships.
 
-Distinguishing feature from Mode 3: the content developer provides an Agent Failure Modes list. The learner knows in advance what to look for. The Decision Log requires an explanation of every construct, not just defective ones.
+Distinguishing feature from Mode 3: the README gives thorough Constraint and Acceptance Criteria pointers, so the learner knows in advance what to check for, already written into the spec they authored from those pointers. The Decision Log requires an explanation of every construct, not just defective ones.
 
 The explain-every-construct requirement is the comprehension mechanism. Even a passing construct requires an entry explaining what it does. This cannot be skipped.
 
@@ -231,7 +240,7 @@ The SCVHS model for progressively withdrawing support structures as learner mast
 
 In SCVHS, scaffolding fades across three dimensions as mode advances from 1 to 3:
 1. Construction support: from full hand-construction (Mode 1) to AI-construction with validation (Modes 2–3).
-2. Validation support: from instructor-provided Agent Failure Modes list (Modes 1–2) to independently derived criteria (Mode 3).
+2. Validation support: from thorough README Constraint/Acceptance-Criteria pointers (Modes 1–2) to independently derived criteria (Mode 3).
 3. Decision Log depth: from explain-every-construct (Mode 2) to validate-and-flag-defects (Mode 3).
 
 Mode 4 fades a fourth, separate dimension not touched by Modes 1–3: Specify support, from learner-authored (Modes 1–3) to AI-drafted and learner-reviewed (Mode 4). It is layered on top of Mode 3, not a continuation of the same three-dimension fade, and is opt-in rather than something every learner is expected to reach.
@@ -290,11 +299,11 @@ below.
 
 ## Full SCVHS (Mode 3)
 
-The third SCVHS mode. The AI tool constructs the artifact from the learner's spec. The learner validates construct by construct but only writes full Decision Log entries for defective constructs (passing constructs get a pass recorded, not a full explanation). No Agent Failure Modes list is provided — the learner derives their own validation criteria from the spec.
+The third SCVHS mode. The AI tool constructs the artifact from the learner's spec. The learner validates construct by construct but only writes full Decision Log entries for defective constructs (passing constructs get a pass recorded, not a full explanation). The README gives no such pointers; the learner derives their own validation criteria from the spec.
 
 This is the production engineering mode. It is the way a proficient engineer using AI tools works in industry.
 
-Distinguishing feature from Mode 2: the removal of the Agent Failure Modes list is the key scaffold removal. The learner must know what to look for without being told.
+Distinguishing feature from Mode 2: the removal of the README's Constraint/Acceptance-Criteria pointers is the key scaffold removal. The learner must know what to check for without being told.
 
 When to apply: the learner has sufficient mental model from previous sprints to direct AI with precision and independently catch defects without a pre-supplied checklist.
 

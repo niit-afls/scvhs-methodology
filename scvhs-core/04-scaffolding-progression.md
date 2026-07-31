@@ -24,7 +24,7 @@ The scaffold is not the AI tool. The AI tool is the production workflow. The sca
 | Scaffold element | Mode 1 | Mode 2 | Mode 3 |
 |---|---|---|---|
 | Hand-construction | Full artifact, by hand | Comprehension Primitive only | Comprehension Primitive only |
-| Agent Failure Modes list | Provided (AI is the subject) | Provided (tells learner what to look for) | Not provided (learner derives independently) |
+| README Constraint/Acceptance-Criteria pointers | Thorough (AI is the subject) | Thorough (tells learner what to check for) | Thin to none (learner derives independently) |
 | Decision Log depth | All AI constructs: full entry | All constructs: full entry (explain even passing ones) | Defects only: full entry; passing: pass recorded |
 | Construct-by-construct guidance | Implicit in hand-building | Explicit: "explain this, explain that" | Implicit: "validate against spec" |
 
@@ -46,12 +46,12 @@ The mode assignment for a sprint is a function of:
 A typical course follows this pattern:
 
 ### Early sprints (Mode 1)
-New technology area. The learner has never written this type of construct. Hand-construction is the primary mode. The AI generates a parallel version used only as a foil for comparison. The Agent Failure Modes list helps the learner know what to check in the AI output.
+New technology area. The learner has never written this type of construct. Hand-construction is the primary mode. The AI generates a parallel version used only as a foil for comparison. The README's Constraint and Acceptance Criteria pointers, already written into the spec the learner authored, help the learner know what to check in the AI output.
 
 **Goal:** Build the mental model through writing. Earn the comprehension that will be used in Mode 3.
 
 ### Middle sprints (Mode 2)
-The learner has built the foundational mental model but the artifacts have grown too large for full hand-construction within the time budget. AI constructs; the learner explains everything. The Agent Failure Modes list scaffolds the learner's attention during Validate.
+The learner has built the foundational mental model but the artifacts have grown too large for full hand-construction within the time budget. AI constructs; the learner explains everything. The README's Constraint and Acceptance Criteria pointers scaffold the learner's attention during Validate.
 
 **Goal:** Extend mental model through reading and explaining at scale. Build the explain-everything discipline that Mode 3 trusts.
 
@@ -107,7 +107,7 @@ When the learner has hand-built this construct type at least once and the sprint
 ### Mode 2 → Mode 3 transition: when?
 When the learner has practiced Mode 2 validation for this technology area in at least one previous sprint and can write a spec precise enough to direct AI without additional guidance.
 
-**Indicator:** The learner does not need the Agent Failure Modes list to find defects — they spot them on their own during Mode 2 validation.
+**Indicator:** The learner does not need thorough README pointers to find defects; they spot them on their own during Mode 2 validation.
 
 ### Stay in Mode 2: when?
 When the technology area is still new enough that the learner needs the explain-everything discipline. When the construct type introduces new security, accessibility, or correctness concerns that warrant extra attention. When the time budget allows for full Decision Log entries.

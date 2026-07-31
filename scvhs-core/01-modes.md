@@ -9,10 +9,10 @@
 
 | Mode | Name | Who constructs | Who specifies | Key scaffold in Validate |
 |---|---|---|---|---|
-| 1 | Hand-First + Validate AI | Learner by hand | Learner | AI version is the foil; instructor provides Agent Failure Modes list |
-| 2 | Hybrid / Generate-then-Explain | AI tool | Learner | Instructor provides Agent Failure Modes list; learner explains every construct |
-| 3 | Full SCVHS | AI tool | Learner | No Agent Failure Modes list; learner validates against spec independently |
-| 4 | AI-Drafted Spec (Advanced) | AI tool | AI tool, drafted; learner reviews and finalizes | Same as Mode 3, no Agent Failure Modes list; learner validates against the spec they reviewed |
+| 1 | Hand-First + Validate AI | Learner by hand | Learner | AI version is the foil; README gives thorough Constraint/Acceptance-Criteria pointers |
+| 2 | Hybrid / Generate-then-Explain | AI tool | Learner | README gives thorough Constraint/Acceptance-Criteria pointers; learner explains every construct |
+| 3 | Full SCVHS | AI tool | Learner | README gives no such pointers; learner validates against spec independently |
+| 4 | AI-Drafted Spec (Advanced) | AI tool | AI tool, drafted; learner reviews and finalizes | Same as Mode 3, no README pointers; learner validates against the spec they reviewed |
 
 The workflow steps are **identical** in all four modes: Specify → Construct → Validate → Harden → Ship.  
 The difference is not the steps; it is who does the writing at each step, the scaffolding, and the level of independence.
@@ -41,7 +41,7 @@ The Decision Log records:
 - What the AI got right (equally important — builds awareness of AI strengths)
 
 ### Scaffolding provided
-The content developer provides an **Agent Failure Modes list** in the sprint design — a pre-researched list of mistakes AI tools typically make for this technology. This tells the learner what to look for before they read the AI output.
+The sprint's README gives thorough Constraint and Acceptance Criteria pointers (see `Practice_README_Guidance.md`), written from the content developer's own reference-build defects: a pre-researched account of what commonly goes wrong for this technology, delivered through the spec the learner writes rather than a separate checklist. This tells the learner what to check for before they compare the AI output.
 
 ### What ships
 The learner's hand-built artifact. The AI version is committed for comparison only.
@@ -78,7 +78,7 @@ The learner reads the AI output one construct at a time and writes a Decision Lo
 **The explaining IS the learning.** Even a passing construct requires an explanation of what it does. This cannot be skipped. A learner who writes "looks correct" for a passing construct has not completed a Mode 2 entry.
 
 ### Scaffolding provided
-The content developer provides an **Agent Failure Modes list** in the sprint design. The learner knows before reading what types of defects to look for. This is the primary scaffold that distinguishes Mode 2 from Mode 3.
+The sprint's README gives thorough Constraint and Acceptance Criteria pointers (see `Practice_README_Guidance.md`). The learner knows before reading what to check for, because it is already written into the spec they authored from those pointers. This is the primary scaffold that distinguishes Mode 2 from Mode 3.
 
 ### What ships
 The corrected AI output. Defects fixed. All constructs explained in the Decision Log.
@@ -86,7 +86,7 @@ The corrected AI output. Defects fixed. All constructs explained in the Decision
 ### When to apply
 - The full artifact is too complex or large to hand-code in the available time
 - But the learner must comprehend every construct before it ships
-- The concept is complex enough that a pre-supplied failure modes list is genuinely useful
+- The concept is complex enough that thorough README pointers are genuinely useful
 
 **Characteristic questions:** "Is hand-coding the full artifact realistic in the time budget?" and "Does the learner have enough mental model to catch defects without a checklist?" If the first is No and the second is also No, Mode 2.
 
@@ -112,7 +112,7 @@ The learner validates construct by construct. The Decision Log records a pass or
 The learner derives their own validation criteria from the spec. They do not need to be told what to look for — they know from prior sprints in this technology area.
 
 ### Scaffolding provided
-None for validation criteria. The spec is the only input. This is the primary scaffold removal: in Mode 2, the content developer tells the learner what to look for. In Mode 3, the learner generates their own criteria from the spec.
+None for validation criteria. The spec is the only input. This is the primary scaffold removal: in Mode 2, the README tells the learner what to check for before they even write their spec. In Mode 3, the README gives little or no such guidance; the learner generates their own Constraints and Acceptance Criteria from first principles.
 
 The Comprehension Primitive remains (unless the learner has written this exact construct type many times before, in which case it can be shortened or skipped at the content developer's discretion).
 
@@ -182,7 +182,7 @@ The workflow is identical. The cognitive activity in Validate is different:
 - Mode 3 Validate: "Check every construct against spec, flag failures" (validation activity)
 
 The scaffolding is different:
-- Mode 2: Instructor tells you what types of defects to look for (Agent Failure Modes list)
+- Mode 2: README gives thorough Constraint/Acceptance-Criteria pointers, telling you what to check for before you even write the spec
 - Mode 3: You derive your own validation criteria from the spec you wrote
 
 A learner moves from Mode 2 to Mode 3 for a technology area when they no longer need to explain every line to know it is correct — they can read it fluently and only need to flag what breaks the spec contract.
@@ -193,14 +193,14 @@ Field feedback from content teams shows the confusion persists even after the on
 
 Think of reviewing a pull request from a junior developer (the AI tool):
 
-- **Mode 2 is reviewing with a mentor's cheat sheet.** The Agent Failure Modes list names the mistakes to look for ("check whether it paginates in memory; check page indexing"). The learner writes a Decision Log entry for every construct, including correct ones - explaining correct code is the learning activity, and it cannot be faked.
+- **Mode 2 is reviewing with a mentor's cheat sheet.** The README's Constraint and Acceptance Criteria pointers name the mistakes to look for ("check whether it paginates in memory; check page indexing"), already written into the spec the learner authored. The learner writes a Decision Log entry for every construct, including correct ones - explaining correct code is the learning activity, and it cannot be faked.
 - **Mode 3 is reviewing as the senior.** No cheat sheet; the spec is the sole reference. The learner tests the output against their own acceptance criteria ("my spec caps page size at 50 - does size=100000 fail correctly?") and logs only what was wrong and how it was fixed. Passing constructs get a recorded pass, no essay.
 
 Mode 2 trains the learner to READ AI output in a technology. Mode 3 tests whether they can OWN it.
 
 Two rules content developers must apply when assigning these modes:
 
-1. **Transition signal:** move a sprint to Mode 3 only when prior Mode 2 Decision Logs show learners catching defects the failure modes list did not name.
+1. **Transition signal:** move a sprint to Mode 3 only when prior Mode 2 Decision Logs show learners catching defects the README's pointers did not name.
 2. **Reset rule:** the ladder is per technology, not per learner. A cohort in Mode 3 for REST endpoints correctly returns to Mode 2 the sprint a new technology (for example, containerization) appears - scaffolding follows the mental model, not seniority.
 
 ---
@@ -217,7 +217,7 @@ Is hand-coding the full artifact realistic in the time budget?
   NO  → continue...
 
 Does the learner have prior validated AI output experience with this technology?
-  NO  → Mode 2 (Hybrid — explain everything, provide Agent Failure Modes list)
+  NO  → Mode 2 (Hybrid: explain everything; README gives thorough Constraint/Acceptance-Criteria pointers)
   YES → continue...
 
 Can the learner derive validation criteria from the spec independently?
