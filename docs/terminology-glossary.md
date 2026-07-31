@@ -42,6 +42,10 @@ The section of a Spec file that defines pass/fail tests for the artifact. Each c
 
 The Acceptance Criteria IS the VALIDATE checklist. A learner works through it construct by construct.
 
+In standard requirements engineering terms, Acceptance Criteria are black-box: written from the
+outside, the user's or tester's perspective, and checked by running the artifact, does it behave
+correctly. If a rule can be verified without reading the code, it belongs here, not in Constraints.
+
 Acceptance Criteria states what the artifact must positively do. Constraints (below) states what it
 must not do, or must not do yet. Do not put a positive requirement in Constraints or a scope
 boundary in Acceptance Criteria, they drive different phases and get conflated easily. See
@@ -55,6 +59,20 @@ The section of a Spec file that states rules the artifact must follow regardless
 otherwise looks or works correctly. Constraints directs CONSTRUCT; Acceptance Criteria (above)
 directs VALIDATE. They are not interchangeable, and confusing them is a common content-developer
 mistake.
+
+In standard requirements engineering terms (the SRS sense, used at NASA and elsewhere),
+Constraints are the limitations and parameters within which the system must operate: technology
+mandates, architecture choices, implementation rules. They restrict how something is built, not
+what it visibly does, and are frequently checkable only by reading the code, never by running the
+program.
+
+This is why a Decision Log checks both Constraints and Acceptance Criteria, not one or the other:
+a Constraint violation is often invisible to any runtime test. Reading credentials from an
+environment variable instead of hardcoding them, or using `ArrayList` internally despite a
+plain-array Constraint, produces code that passes every Acceptance Criterion perfectly, `connect()`
+still succeeds, `getStudents()` still returns the right rows, while still violating the spec.
+Acceptance Criteria alone cannot catch either defect; that is not redundancy, it is two different
+kinds of correctness, checked two different ways.
 
 Constraints are optional, use the section only on merit. Not every artifact has a rule worth
 writing down. Write a Constraint when this sprint's artifact actually needs one; do not pad the
