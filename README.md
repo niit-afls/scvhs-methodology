@@ -61,7 +61,7 @@ scvhs/
 │
 ├── scvhs-templates/                   — operational artifacts for learners and content developers
 │   ├── Spec_Template.md               — generic specification template
-│   ├── AI_Decision_Log_Template.md    — generic Decision Log template
+│   ├── AI_Decision_Log_Template.md    - index to the three per-mode Decision Log templates
 │   └── Sprint_Design_Checklist.md     — checklist for content developers
 │
 ├── scvhs-examples/                    — worked examples by course and technology
@@ -101,7 +101,7 @@ scvhs/
 
 **Before each sprint:** Read the Spec file your instructor provides. Note the SCVHS Mode declared in the header — it tells you who constructs and what your role in Validate is.
 
-**During Validate:** Fill your [AI_Decision_Log_Template.md](scvhs-templates/AI_Decision_Log_Template.md) construct by construct. Do not wait until you have read the whole file.
+**During Validate:** Get the Decision Log template for your sprint's mode from [AI_Decision_Log_Template.md](scvhs-templates/AI_Decision_Log_Template.md) and fill it in construct by construct. Do not wait until you have read the whole file.
 
 **At Ship:** Commit both the corrected artifact and the completed Decision Log together.
 

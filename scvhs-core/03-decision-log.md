@@ -217,5 +217,5 @@ it in git history.
 
 ## Template
 
-The blank template is at [../scvhs-templates/AI_Decision_Log_Template.md](../scvhs-templates/AI_Decision_Log_Template.md).  
+Get the blank template for your sprint's mode from [../scvhs-templates/AI_Decision_Log_Template.md](../scvhs-templates/AI_Decision_Log_Template.md).  
 A worked example for Sprint 1 (HTML, Mode 1) is at [../scvhs-examples/C04-Web-Applications/AI_Decision_Log_S01_Example.md](../scvhs-examples/C04-Web-Applications/AI_Decision_Log_S01_Example.md).
