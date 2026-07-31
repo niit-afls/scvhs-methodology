@@ -352,7 +352,7 @@ too.
 
 ## VALIDATE (Phase 3)
 
-The third SCVHS phase. The engineer reads the constructed artifact against the spec, construct by construct. Every construct gets a full Decision Log entry in Mode 2 and Mode 3 alike, passing and failing constructs both; in Mode 1, entries record what the AI got wrong and what it got right against the learner's own hand-built reference.
+The third SCVHS phase. The engineer reads the constructed artifact against the spec, one Decision Log entry per Constraint and one per Acceptance Criterion, passing and failing alike, in every mode. What differs by mode is how "Match with spec" gets determined: in Mode 1, by comparing against the learner's own hand-built reference; in Mode 2 and Mode 3, by validating directly against the spec.
 
 Validation is active, not passive. It uses tools: W3C Validator, TypeScript compiler, browser DevTools, Postman, docker build, pytest, etc. "It looks right" is not a validation method.
 

@@ -81,14 +81,17 @@ Before doing anything else, define the Ship artifact.
 
 ## Step 6: Decision Log Alignment
 
-- [ ] **Decision Log instructions match the mode:**
-  - Mode 2: "Fill an entry for EVERY construct — passing and failing alike."
-  - Mode 3: same as Mode 2. Mode 3 changes who drafts the spec, not the Decision Log rules.
-- [ ] **Every entry is grounded in the spec:** Each entry checks its construct against a specific
-      Constraint or Acceptance Criterion from that sprint's own spec, named explicitly, not the
-      reviewer's outside technology knowledge and not an external checklist. If an entry can't name
-      which line of the spec it's checking against, it isn't a valid entry.
-- [ ] **Construct granularity specified:** The sprint brief makes clear what counts as "one construct" for this technology (e.g., "one rule set" for CSS; "one endpoint method" for Spring Boot).
+- [ ] **Decision Log uses the one template for every mode:** `AI_Decision_Log_Template.md`. Every
+      Constraint and every Acceptance Criterion in the spec gets a full entry, passing and failing
+      alike, in every mode. What differs by mode is how "Match with spec" is determined, not
+      whether an entry gets written:
+  - Mode 1: by comparing the AI's version against the learner's own hand-built reference.
+  - Mode 2 and Mode 3: by validating directly against the spec. Identical to each other; Mode 3
+    only changes who drafted the spec.
+- [ ] **Every entry is grounded in the spec:** Each entry's title is a Constraint or Acceptance
+      Criterion copied word for word from that sprint's own spec, not the reviewer's outside
+      technology knowledge and not an external checklist. If an entry can't name which line of the
+      spec it's checking against, it isn't a valid entry.
 - [ ] **Decision Log file named and versioned:** Sprint materials specify the Decision Log filename:
       `AI_Decision_Log_S[NN]_v1.md`, `_v2.md` for any later revision, never edited in place.
 

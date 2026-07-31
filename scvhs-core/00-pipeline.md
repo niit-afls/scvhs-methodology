@@ -95,7 +95,7 @@ A construct is one logical unit of the technology in use:
 The learner reads one construct, writes a Decision Log entry, reads the next construct, writes the next entry. The Decision Log is filled in real time, not after finishing the whole file.
 
 ### The Decision Log
-Every construct gets an entry. For Mode 1: what the AI got wrong and what it got right against the learner's hand-built reference. For Mode 2 and Mode 3: every construct, pass or fail, requires a full entry explaining what it does. Mode 3 follows the Mode 2 Decision Log rules exactly, since the spec being AI-drafted only changes SPECIFY, not VALIDATE.
+Same format in every mode: one entry per Constraint and one entry per Acceptance Criterion in the spec, every one requiring a full entry, pass or fail, that explains what the code does. What differs by mode is how "Match with spec" gets determined: in Mode 1, by comparing against the learner's hand-built reference; in Mode 2 and Mode 3, by validating directly against the spec. Mode 3 follows the Mode 2 Decision Log rules exactly, since the spec being AI-drafted only changes SPECIFY, not VALIDATE.
 
 See [03-decision-log.md](03-decision-log.md) for the full Decision Log specification.
 

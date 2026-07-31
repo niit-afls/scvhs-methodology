@@ -29,7 +29,7 @@ Modes 1 and 2 fade CONSTRUCT scaffolding as the learner's mental model grows (se
 ## Mode 1: Hand-First + Validate AI
 
 ### Summary
-You build it first. Then AI builds the same thing. You compare and document what AI got wrong.
+You build it first. Then AI builds the same thing. You compare and document what matches and what doesn't, against your own reference.
 
 ### Construction
 The learner constructs the full artifact by hand, from the spec, without AI assistance. This is the primary construction. The hand-built version is the known-correct reference.
@@ -37,13 +37,13 @@ The learner constructs the full artifact by hand, from the spec, without AI assi
 After hand-construction is complete, the same spec is given to an AI tool. The AI constructs a parallel version. The AI version is the **foil** — it is used only for comparison and is discarded after validation.
 
 ### Validate activity
-The learner validates the AI output against the spec, construct by construct. Because the learner has already built the correct version themselves, they have an independent standard. They are not asking "is this correct?" — they know the correct answer. They are asking "what did the AI do differently, and why is that a defect?"
+The learner validates the AI output against the spec, one entry per Constraint and one entry per Acceptance Criterion, the same Decision Log format as Modes 2 and 3 (see [03-decision-log.md](03-decision-log.md)). What differs is the method: the learner already built a known-correct reference by hand, so they are not asking "is this correct?", they know the answer, and check each entry by comparing the AI's version against both the spec and their own hand-built version.
 
-The Decision Log records:
-- What the AI got wrong (with spec reference)
-- How the learner caught it
-- What the correct version looks like (no fix needed in the code — learner's hand-built version is already correct)
-- What the AI got right (equally important — builds awareness of AI strengths)
+For each entry:
+- What the AI's code does (plain English)
+- Whether it matches, checked against the hand-built reference
+- If it does not: what the AI did differently, and why that is a defect. No fix is applied to the code, the learner's hand-built version is already correct and is what ships
+- If it does match: worth recording too, it shows where the AI reached a correct result independently
 
 ### Scaffolding provided
 The sprint's README gives thorough Constraint and Acceptance Criteria pointers (see `Practice_README_Guidance.md`), written from the content developer's own reference-build defects: a pre-researched account of what commonly goes wrong for this technology, delivered through the spec the learner writes rather than a separate checklist. This tells the learner what to check for before they compare the AI output.
