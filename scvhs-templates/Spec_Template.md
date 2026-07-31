@@ -26,6 +26,12 @@ your content team to add pointers, that is a gap in the practice materials, not 
 expected to guess. See "Guidance for the practice README" in `Practice_README_Guidance.md` if you
 are the one writing that README.
 
+**If you are a content developer using an AI tool to draft a sprint's reference spec** (not a
+learner writing their own), use `Sample_Spec_Template.md` instead of filling this document by hand.
+It pairs a ready-to-use prompt with a leaner version of this same template, without the tutorial
+content below, meant for handing to an LLM alongside the README. Review its output with the same
+rigor you would apply to a human-drafted spec.
+
 **Standards:**
 - Name the technology construct, not just the content. Not "a projects section" — "a `<section>` element containing three `<article>` elements."
 - Every acceptance criterion must be a binary pass/fail check, something you can verify with a tool, in a browser, in a terminal, or by reading the code.
