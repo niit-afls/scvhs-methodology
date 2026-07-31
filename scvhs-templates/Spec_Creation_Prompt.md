@@ -1,22 +1,5 @@
 # Spec Creation Prompt (locked 2026-07-27)
 
-For a content developer using an AI tool to draft a sprint's reference `Spec_S0N_[Title].md`, the
-same authoring work a content developer would otherwise do by hand. Not for learners drafting their
-own spec, that remains the whole point of the Specify stage, see `Practice_README_Guidance.md` for
-why, and for how to scaffold that without doing it for them.
-
-Subject-agnostic: works the same way for React, HTML, CSS, Docker, Spring Boot, a properties file,
-a CI/CD script, or any other sprint technology, since it derives every technology-specific detail
-from the sprint's own README rather than assuming one.
-
-**How to use:** attach the sprint's `README.md`, paste the prompt below, then paste the raw
-contents of `Sample_Spec_Template.md` after it. Review what comes back the same way you would
-review a human-drafted spec, the checklist below is not optional.
-
----
-
-## The prompt
-
 ```
 You are drafting a CLAUDE.md/AGENTS.md-style specification file, not documentation. This file will
 be handed directly to an AI coding tool as its construction instructions. Write it that way: direct,
@@ -50,25 +33,8 @@ First, identify from the README:
   the controller method." Do not invent scope-exclusion constraints for techniques the README never
   mentions as a later-sprint topic.
 
-Fill in the template below. Follow its section order exactly. Do not add sections it does not have.
+Fill in the provided template markdown file. Follow its section order exactly. Do not add sections it does not have.
 ```
 
 ---
 
-## After the AI drafts the spec
-
-Do not ship the output as-is. Check:
-- Every Constraint and Acceptance Criterion traces back to something the README's "Writing Your
-  Spec" section actually asked for, nothing invented, nothing missing.
-- If the README listed no Constraints, the section is deleted, not filled with an invented rule.
-- Any scope-exclusion constraint actually matches a later-sprint topic named in the README's
-  course sequence, not a technique the AI assumed was out of scope on its own.
-- The Comprehension Primitive is genuinely minimal, one unit, not a working version of the real
-  artifact.
-- Every acceptance criterion names a specific, repeatable verification action, not a restated
-  conclusion.
-- No "Files to Commit" section, no meta-commentary about the AI or the workflow, snuck in.
-
-Related: `Sample_Spec_Template.md` (the placeholder template this prompt fills in),
-`Practice_README_Guidance.md` (how to write the "Writing Your Spec" pointers this prompt depends
-on), `Spec_Template.md` (the full, human-facing version, for when a learner writes their own spec).
