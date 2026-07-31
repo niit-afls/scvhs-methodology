@@ -1,11 +1,5 @@
 # Spec_S0N_[Title].md
 
-**Author:** [Content Dev Name]
-**Sprint:** [Sprint Number] - [Sprint Title]
-**Date:** [Date]
-**SCVHS Mode:** [Mode 1 / Mode 2 - Hybrid / Generate-then-Explain / Mode 3 - Full SCVHS]
-**Base:** [What exists before this sprint, or "None"]
-
 ---
 
 ## 1. Purpose
@@ -25,9 +19,6 @@ component. If the real artifact must handle variable or unknown input, this prim
 demonstrate that same handling in miniature, not a single fixed case.]
 ```
 
-[One sentence naming the exact pattern this primitive establishes, and stating that the artifact in
-Section 3 must follow the same pattern, without pre-solving structure, error handling, or edge
-cases that belong there instead.]
 
 ---
 
@@ -60,7 +51,7 @@ does not, delete this section rather than inventing one to fill it. One bullet p
 README lists. State the actual decision, do not restate the README's question back as the answer.
 Do not add constraints the README never asked for.
 Two kinds: how-to rules for what IS being built ("no magic numbers"), and scope-exclusion rules
-for what must NOT be built yet, phrased as "Do not add [X]. Introduced in Sprint [N]." Pair a
+for what must NOT be built yet, phrased as "Do not add [X]." Pair a
 scope-exclusion constraint with a matching Acceptance Criterion when the omission itself needs
 verifying.)*
 
@@ -80,6 +71,3 @@ correctly" is never acceptable on its own.)*
 - [ ] [Expected behavior, precisely stated]. Verify by [the specific action you would actually take].
 - [ ] [Expected behavior, precisely stated]. Verify by [the specific action you would actually take].
 
-**[Second concern group, if needed]**
-
-- [ ] [Expected behavior]. Verify by [specific action].
