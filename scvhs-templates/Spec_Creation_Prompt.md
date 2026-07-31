@@ -1,13 +1,17 @@
 # Spec Creation Prompt (locked 2026-07-27)
 
-The generic prompt for a content developer using an AI tool to draft a sprint's reference
-`Spec_S0N_[Title].md`. Subject-agnostic: works the same way for React, HTML, CSS, Docker, Spring
-Boot, a properties file, a CI/CD script, or any other sprint technology, since it derives every
-technology-specific detail from the sprint's own README rather than assuming one.
+For a content developer using an AI tool to draft a sprint's reference `Spec_S0N_[Title].md`, the
+same authoring work a content developer would otherwise do by hand. Not for learners drafting their
+own spec, that remains the whole point of the Specify stage, see `Practice_README_Guidance.md` for
+why, and for how to scaffold that without doing it for them.
 
-Use with: the sprint's `README.md` (attached or pasted above this prompt) and
-`Sample_Spec_Template.md` (pasted below this prompt). Not for learners drafting their own spec, see
-`Practice_README_Guidance.md` for why that stays a human, hand-written step.
+Subject-agnostic: works the same way for React, HTML, CSS, Docker, Spring Boot, a properties file,
+a CI/CD script, or any other sprint technology, since it derives every technology-specific detail
+from the sprint's own README rather than assuming one.
+
+**How to use:** attach the sprint's `README.md`, paste the prompt below, then paste the raw
+contents of `Sample_Spec_Template.md` after it. Review what comes back the same way you would
+review a human-drafted spec, the checklist below is not optional.
 
 ---
 

@@ -1,20 +1,3 @@
-# Sample Spec Template - for AI-Assisted Drafting (locked 2026-07-27)
-
-For content developers using an AI tool to draft a sprint's reference `Spec_S0N_[Title].md`, the
-same authoring work a content developer would otherwise do by hand. This is not for learners
-drafting their own spec, that remains the whole point of the Specify stage, see
-`Practice_README_Guidance.md` for why, and for how to scaffold that without doing it for them.
-
-Use this together with `Spec_Creation_Prompt.md`: attach the sprint's `README.md`, paste the prompt
-from that file, then paste the template below it. Review what comes back the same way you would
-review a human-drafted spec, nothing here substitutes for that review, see the checklist in
-`Spec_Creation_Prompt.md` for what to check.
-
----
-
-## The template
-
-```markdown
 # Spec_S0N_[Title].md
 
 **Author:** [Content Dev Name]
@@ -95,12 +78,3 @@ correctly" is never acceptable on its own.)*
 **[Second concern group, if needed]**
 
 - [ ] [Expected behavior]. Verify by [specific action].
-```
-
----
-
-Related: `Spec_Creation_Prompt.md` (the prompt to pair with this template, and the checklist for
-what to verify after the AI drafts it), `Spec_Template.md` (the full, human-facing version with
-tutorial content, use this instead when a learner is writing their own spec by hand),
-`Practice_README_Guidance.md` (how to write the "Writing Your Spec" pointers this template depends
-on).
