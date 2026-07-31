@@ -14,6 +14,14 @@ Removed in Mode 3 — the learner is expected to derive their own validation cri
 Examples for HTML: multiple h1 elements, missing lang attribute, div soup (generic divs used instead of semantic elements), non-descriptive link text.
 Examples for CSS: !important to resolve specificity conflicts, magic numbers instead of a spacing scale, px instead of rem for font sizes.
 
+**Cross-technology failure mode, worth including in nearly every progressive-curriculum sprint
+(added 2026-07-27):** the AI tool adds functionality the spec did not ask for, typically something
+genuinely good practice in general, exception handling, input validation, pagination, that happens
+to be scoped to a later sprint here. This is not the AI being wrong in the usual sense, the code it
+adds may work fine, it is the AI ignoring a scope boundary. Catch it by checking the artifact
+against the spec's Constraints section (its scope-exclusion rules) as carefully as against
+Acceptance Criteria. See Constraints for how to write the spec side of this.
+
 ---
 
 ## Acceptance Criteria
@@ -24,6 +32,48 @@ The section of a Spec file that defines pass/fail tests for the artifact. Each c
 - Derived from the spec constraints, not from general best practice
 
 The Acceptance Criteria IS the VALIDATE checklist. A learner works through it construct by construct.
+
+Acceptance Criteria states what the artifact must positively do. Constraints (below) states what it
+must not do, or must not do yet. Do not put a positive requirement in Constraints or a scope
+boundary in Acceptance Criteria, they drive different phases and get conflated easily. See
+Constraints for the distinction and for why this specifically matters in a progressive curriculum.
+
+---
+
+## Constraints (clarified 2026-07-27)
+
+The section of a Spec file that states rules the artifact must follow regardless of whether it
+otherwise looks or works correctly. Constraints directs CONSTRUCT; Acceptance Criteria (above)
+directs VALIDATE. They are not interchangeable, and confusing them is a common content-developer
+mistake.
+
+Constraints are optional, use the section only on merit. Not every artifact has a rule worth
+writing down. Write a Constraint when this sprint's artifact actually needs one; do not pad the
+section with a constraint invented just to fill it. An omitted Constraints section is correct more
+often than a forced one.
+
+Two kinds of constraint:
+1. **How-to rules**, for what IS being built: no magic numbers, no business logic in the controller
+   layer, no `!important` in any stylesheet. These shape the implementation of in-scope behavior.
+2. **Scope-exclusion rules**, for what must NOT be built at all, even though a generically
+   "complete" or "production-ready" version of the artifact would normally include it.
+
+Scope-exclusion rules exist specifically because SCVHS courses teach one construct at a time across
+a sequence of sprints. An AI tool asked to construct "a REST endpoint," left unconstrained, will
+generate exception handling, input validation, and pagination whether or not those are this
+sprint's topic, because that is what a complete endpoint looks like to a general-purpose model. If
+those techniques are taught in a later sprint, their unrequested appearance now is not a bonus, it
+is a defect: the learner has not built reading literacy for them yet, and the artifact no longer
+matches what this sprint is teaching.
+
+Phrase scope-exclusion constraints as explicit negative instructions, naming what to omit and why:
+"Do not add exception handling. Introduced in Sprint 4." Not "keep it simple", that is not testable
+and an AI tool will not reliably act on it.
+
+Pair a scope-exclusion constraint with a matching Acceptance Criterion whenever the omission itself
+needs verifying: "The endpoint contains no try/catch block. Verify by reading the controller
+method." An AI tool adding untaught functionality anyway is a real, common Agent Failure Mode
+(see that entry), worth naming explicitly in any progressive-curriculum sprint's failure list.
 
 ---
 
@@ -223,6 +273,10 @@ The first SCVHS phase. The engineer writes a complete, testable specification of
 A SPECIFY output (a Spec file) must be:
 - Precise enough to direct an AI tool to construct the artifact with no additional instruction.
 - Structured with an Acceptance Criteria section containing only binary pass/fail checks.
+- Structured with a Constraints section when this sprint's artifact needs one (see Constraints,
+  above); not every sprint has a constraint worth writing down. Include it only on merit: a
+  how-to rule the artifact must follow, or a scope-exclusion rule naming something to leave out.
+  An empty or padded Constraints section is worse than an omitted one.
 - Written before any code is written.
 
 ---

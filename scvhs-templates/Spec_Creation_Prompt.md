@@ -38,6 +38,17 @@ First, identify from the README:
   section 3.
 - The one core technique this sprint is introducing for the first time (the thing the
   Comprehension Primitive is meant to build reading literacy for).
+- Whether the README's "Writing Your Spec" section lists any Constraints at all. Constraints are
+  optional: if the README lists none, delete the Constraints section entirely rather than inventing
+  one to fill it.
+- If the README does list Constraints, check whether any of them are scope-exclusion rules: things
+  a generically "complete" version of this artifact would normally include, but that belong to a
+  later sprint in this course (for example, exception handling, input validation, pagination,
+  authentication). Phrase each as an explicit negative naming what to omit and why: "Do not add
+  [X]. Introduced in Sprint [N]." Where the omission itself needs verifying, add a matching
+  Acceptance Criterion, for example: "The endpoint contains no try/catch block. Verify by reading
+  the controller method." Do not invent scope-exclusion constraints for techniques the README never
+  mentions as a later-sprint topic.
 
 Fill in the template below. Follow its section order exactly. Do not add sections it does not have.
 ```
@@ -49,6 +60,9 @@ Fill in the template below. Follow its section order exactly. Do not add section
 Do not ship the output as-is. Check:
 - Every Constraint and Acceptance Criterion traces back to something the README's "Writing Your
   Spec" section actually asked for, nothing invented, nothing missing.
+- If the README listed no Constraints, the section is deleted, not filled with an invented rule.
+- Any scope-exclusion constraint actually matches a later-sprint topic named in the README's
+  course sequence, not a technique the AI assumed was out of scope on its own.
 - The Comprehension Primitive is genuinely minimal, one unit, not a working version of the real
   artifact.
 - Every acceptance criterion names a specific, repeatable verification action, not a restated

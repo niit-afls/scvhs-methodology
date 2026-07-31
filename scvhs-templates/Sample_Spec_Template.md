@@ -55,9 +55,14 @@ README. Name every piece; do not leave any artifact from the README's domain des
 
 ## 4. Constraints
 
-*(One bullet per point the README's "Writing Your Spec" section lists under Constraints. State the
-actual decision, do not restate the README's question back as the answer. Do not add constraints
-the README never asked for.)*
+*(Optional, include only if the README's "Writing Your Spec" section lists Constraints. If it
+does not, delete this section rather than inventing one to fill it. One bullet per point the
+README lists. State the actual decision, do not restate the README's question back as the answer.
+Do not add constraints the README never asked for.
+Two kinds: how-to rules for what IS being built ("no magic numbers"), and scope-exclusion rules
+for what must NOT be built yet, phrased as "Do not add [X]. Introduced in Sprint [N]." Pair a
+scope-exclusion constraint with a matching Acceptance Criterion when the omission itself needs
+verifying.)*
 
 - [Constraint: the actual decision, stated as a rule]
 - [Constraint: the actual decision, stated as a rule]

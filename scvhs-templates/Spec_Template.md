@@ -203,7 +203,13 @@ What a correct response looks like — structure, type, length.
 *Rules that apply regardless of whether the output looks or works correctly.*
 *These are often where AI fails — it produces something that runs but violates a constraint.*
 
-Examples:
+*This section is optional. Include it only on merit; write a constraint when this sprint's*
+*artifact actually needs one. Do not invent a constraint just to fill the section; an omitted*
+*Constraints section is better than a padded one.*
+
+There are two kinds of constraint:
+
+**How-to rules**, for what IS being built, shaping the implementation of in-scope behavior:
 - No magic numbers: all values from the defined scale
 - No business logic in the controller layer
 - No direct database access from the UI layer
@@ -211,7 +217,20 @@ Examples:
 - All inputs validated before processing
 - All API responses include an error shape for failure cases
 
-*List the constraints that apply to this sprint's technology:*
+**Scope-exclusion rules**, for what must NOT be built at all, even though a generically
+"complete" version of the artifact would normally include it. These exist because SCVHS courses
+teach one construct at a time: an AI tool asked to build "a REST endpoint," left unconstrained,
+will add exception handling, input validation, and pagination whether or not those are this
+sprint's topic. If a later sprint teaches those, their unrequested appearance now is a defect, not
+a bonus. Phrase these as explicit negatives naming what to omit and why:
+- "Do not add exception handling. Introduced in Sprint 4."
+- "Do not add pagination. Introduced in Sprint 6."
+
+Pair a scope-exclusion constraint with a matching Acceptance Criterion whenever the omission
+itself needs verifying, for example: "The endpoint contains no try/catch block. Verify by reading
+the controller method."
+
+*List the constraints that apply to this sprint's technology, if any:*
 
 ---
 
