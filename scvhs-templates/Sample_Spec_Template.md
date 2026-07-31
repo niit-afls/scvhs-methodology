@@ -54,9 +54,9 @@ Every constraint must be testable, checkable pass or fail by reading the code or
 Do not write generic statements like "keep it simple" or "write clean code," they apply to every
 sprint and cannot be checked; write the specific rule they stand in for instead.
 Two kinds: how-to rules for what IS being built ("no magic numbers"), and scope-exclusion rules
-for what must NOT be built yet, phrased as "Do not add [X]." Pair a
-scope-exclusion constraint with a matching Acceptance Criterion when the omission itself needs
-verifying.)*
+for what must NOT be built yet, phrased as "Do not add [X]," including how to verify the omission
+inside the constraint itself (it requires reading code, so it stays a Constraint, it does not
+become an Acceptance Criterion just because it needs a stated check).)*
 
 - [Constraint: the actual decision, stated as a rule]
 - [Constraint: the actual decision, stated as a rule]

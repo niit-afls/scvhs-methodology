@@ -234,13 +234,18 @@ There are two kinds of constraint:
 teach one construct at a time: an AI tool asked to build "a REST endpoint," left unconstrained,
 will add exception handling, input validation, and pagination whether or not those are this
 sprint's topic. If a later sprint teaches those, their unrequested appearance now is a defect, not
-a bonus. Phrase these as explicit negatives naming what to omit and why:
-- "Do not add exception handling. Introduced in Sprint 4."
+a bonus. Phrase these as explicit negatives naming what to omit, why, and how to check it, since
+this is a Constraint, its verification method belongs inside the constraint itself, not in a
+separate Acceptance Criterion:
+- "Do not add exception handling. Introduced in Sprint 4. Verify by reading the controller method
+  for a try/catch block."
 - "Do not add pagination. Introduced in Sprint 6."
 
-Pair a scope-exclusion constraint with a matching Acceptance Criterion whenever the omission
-itself needs verifying, for example: "The endpoint contains no try/catch block. Verify by reading
-the controller method."
+A check that requires reading code is a Constraint, full stop, it does not get promoted to an
+Acceptance Criterion just because it needs a stated verification method. If a genuine runtime
+signature exists for the same rule (sending a malformed request is accepted rather than rejected,
+for example), write that as a real Acceptance Criterion instead, describing observable behavior,
+not code structure. See Constraints in `terminology-glossary.md` for the worked example of both.
 
 *List the constraints that apply to this sprint's technology, if any:*
 

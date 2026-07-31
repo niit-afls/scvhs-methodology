@@ -27,11 +27,15 @@ First, identify from the README:
 - If the README does list Constraints, check whether any of them are scope-exclusion rules: things
   a generically "complete" version of this artifact would normally include, but that belong to a
   later sprint in this course (for example, exception handling, input validation, pagination,
-  authentication). Phrase each as an explicit negative naming what to omit and why: "Do not add
-  [X]. Introduced in Sprint [N]." Where the omission itself needs verifying, add a matching
-  Acceptance Criterion, for example: "The endpoint contains no try/catch block. Verify by reading
-  the controller method." Do not invent scope-exclusion constraints for techniques the README never
-  mentions as a later-sprint topic.
+  authentication). Phrase each as an explicit negative naming what to omit, why, and how to check
+  it: "Do not add [X]. Introduced in Sprint [N]. Verify by reading [where] for [what]." The
+  verification method stays inside the constraint itself; a check that requires reading code is a
+  Constraint, it never becomes a separate "Acceptance Criterion" just because it needs a stated
+  check, that would contradict Acceptance Criteria being verified by running the artifact, not by
+  reading it. If a genuine runtime signature exists for the same rule instead (sending bad input is
+  accepted rather than rejected, for example), write that as a real Acceptance Criterion, describing
+  observable behavior, not code structure. Do not invent scope-exclusion constraints for techniques
+  the README never mentions as a later-sprint topic.
 - Every Constraint you write must be a testable restriction, checkable pass or fail by reading the
   code, the same bar Acceptance Criteria are held to. Never write generic statements like "keep the
   implementation simple," "write clean code," or "include clear comments," they apply equally to

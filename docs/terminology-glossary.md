@@ -36,20 +36,26 @@ Acceptance Criteria. See Constraints for how to write the spec side of this.
 ## Acceptance Criteria
 
 The section of a Spec file that defines pass/fail tests for the artifact. Each criterion must be:
-- Binary (pass or fail — no partial credit in the criterion itself)
-- Testable with a specific tool or method
-- Derived from the spec constraints, not from general best practice
+- Binary (pass or fail, no partial credit in the criterion itself)
+- Testable by running the artifact, not by reading its code
+- Derived from the spec's own Constraints, not from general best practice
 
 The Acceptance Criteria IS the VALIDATE checklist. A learner works through it construct by construct.
 
-In standard requirements engineering terms, Acceptance Criteria are black-box: written from the
-outside, the user's or tester's perspective, and checked by running the artifact, does it behave
-correctly. If a rule can be verified without reading the code, it belongs here, not in Constraints.
+**The one-line test:** if you can verify it just by running the program, without opening the
+source, it belongs here. If you have to read the code to check it, it belongs in Constraints
+(below), not here.
 
-Acceptance Criteria states what the artifact must positively do. Constraints (below) states what it
-must not do, or must not do yet. Do not put a positive requirement in Constraints or a scope
-boundary in Acceptance Criteria, they drive different phases and get conflated easily. See
-Constraints for the distinction and for why this specifically matters in a progressive curriculum.
+Example, a login form:
+- Acceptance Criterion: "Login succeeds with a valid username and password." Press submit, watch
+  what happens. No code reading needed.
+
+Example, the JDBC sprint this rule was clarified from:
+- Acceptance Criterion: "`connect()` fails clearly with invalid configuration." Run it with a wrong
+  password, watch what prints.
+
+See Constraints for the paired example, the same two features checked the other way, and for why
+the Decision Log needs both sections, not just this one.
 
 ---
 
@@ -63,16 +69,26 @@ mistake.
 In standard requirements engineering terms (the SRS sense, used at NASA and elsewhere),
 Constraints are the limitations and parameters within which the system must operate: technology
 mandates, architecture choices, implementation rules. They restrict how something is built, not
-what it visibly does, and are frequently checkable only by reading the code, never by running the
-program.
+what it visibly does.
+
+**The one-line test:** if the only way to check a rule is to open the source and read it, it is a
+Constraint, not an Acceptance Criterion, no matter how it's phrased.
+
+Example, a login form:
+- Constraint: "Passwords are hashed with bcrypt before storage." The login behaves identically
+  whether the password was hashed or stored in plain text. Opening the code is the only way to
+  tell.
+
+Example, the JDBC sprint:
+- Constraint: "Database credentials are hardcoded, not read from environment variables." The
+  program connects successfully either way. You can only tell by reading `DBConnectionManager.java`.
 
 This is why a Decision Log checks both Constraints and Acceptance Criteria, not one or the other:
-a Constraint violation is often invisible to any runtime test. Reading credentials from an
-environment variable instead of hardcoding them, or using `ArrayList` internally despite a
-plain-array Constraint, produces code that passes every Acceptance Criterion perfectly, `connect()`
-still succeeds, `getStudents()` still returns the right rows, while still violating the spec.
-Acceptance Criteria alone cannot catch either defect; that is not redundancy, it is two different
-kinds of correctness, checked two different ways.
+a Constraint violation is often invisible to any runtime test. In the review that produced the
+examples above, the AI read config from an environment variable instead of hardcoding it, and every
+Acceptance Criterion still passed, `connect()` succeeded fine. Only reading the code against the
+Constraint caught it. That is not redundancy between the two sections, it is two different kinds of
+correctness, checked two different ways.
 
 Constraints are optional, use the section only on merit. Not every artifact has a rule worth
 writing down. Write a Constraint when this sprint's artifact actually needs one; do not pad the
@@ -101,14 +117,32 @@ those techniques are taught in a later sprint, their unrequested appearance now 
 is a defect: the learner has not built reading literacy for them yet, and the artifact no longer
 matches what this sprint is teaching.
 
-Phrase scope-exclusion constraints as explicit negative instructions, naming what to omit and why:
-"Do not add exception handling. Introduced in Sprint 4." Not "keep it simple", that is not testable
-and an AI tool will not reliably act on it.
+Phrase scope-exclusion constraints as explicit negative instructions, naming what to omit, why, and
+how to check it. Since this is a Constraint, its verification method belongs inside the constraint
+itself, not in a separate Acceptance Criterion:
+- "Do not add input validation. Introduced in Sprint 5. Verify by reading the controller method for
+  a validation library import or manual field checks."
+- "Do not add a try/catch block. Introduced in Sprint 6. Verify by reading the controller method."
 
-Pair a scope-exclusion constraint with a matching Acceptance Criterion whenever the omission itself
-needs verifying: "The endpoint contains no try/catch block. Verify by reading the controller
-method." An AI tool adding untaught functionality anyway is a real, common Agent Failure Mode
-(see that entry), worth naming explicitly in any progressive-curriculum sprint's failure list.
+A check that requires reading code is a Constraint, full stop. It does not get promoted to an
+Acceptance Criterion just because it needs a stated verification method (an earlier version of this
+entry got this wrong, pairing a scope-exclusion constraint with an "Acceptance Criterion" that said
+"verify by reading the controller method," which directly contradicts the black-box rule above;
+that phrasing has been corrected here).
+
+If a genuine runtime signature exists for the same rule, write that as a real Acceptance Criterion
+instead, one that describes observable behavior, not code structure:
+- Acceptance Criterion: "Sending a request with a malformed email is accepted the same as a valid
+  one, not rejected." Run it, send bad data, watch what happens.
+- Acceptance Criterion: "Stopping the database and hitting the endpoint produces an unhandled crash
+  (a raw stack trace), not a structured JSON error." Run it, kill the database, watch what happens.
+
+These are two different verification strategies for the same underlying rule, not the same check
+described twice. Use whichever fits: if a runtime signature exists, write the Acceptance Criterion.
+If the only way to know is opening the file, it stays inside the Constraint.
+
+An AI tool adding untaught functionality anyway is a real, common Agent Failure Mode (see that
+entry), worth naming explicitly in any progressive-curriculum sprint's failure list.
 
 ---
 
