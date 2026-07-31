@@ -50,6 +50,9 @@ README. Name every piece; do not leave any artifact from the README's domain des
 does not, delete this section rather than inventing one to fill it. One bullet per point the
 README lists. State the actual decision, do not restate the README's question back as the answer.
 Do not add constraints the README never asked for.
+Every constraint must be testable, checkable pass or fail by reading the code or running a tool.
+Do not write generic statements like "keep it simple" or "write clean code," they apply to every
+sprint and cannot be checked; write the specific rule they stand in for instead.
 Two kinds: how-to rules for what IS being built ("no magic numbers"), and scope-exclusion rules
 for what must NOT be built yet, phrased as "Do not add [X]." Pair a
 scope-exclusion constraint with a matching Acceptance Criterion when the omission itself needs

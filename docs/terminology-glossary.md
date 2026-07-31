@@ -61,6 +61,14 @@ writing down. Write a Constraint when this sprint's artifact actually needs one;
 section with a constraint invented just to fill it. An omitted Constraints section is correct more
 often than a forced one.
 
+Every constraint written must be a testable restriction, checkable pass or fail against the code,
+the same standard Acceptance Criteria are already held to. "Keep it simple," "write clean code,"
+and "include clear comments" are not constraints: they apply equally to every sprint, are not
+specific to this artifact, and a Decision Log entry has no way to check pass or fail against them.
+When a constraint like that feels necessary, the fix is to find the specific rule it is standing in
+for and write that instead, for example "use a single fixed-size array; do not implement resizing
+logic" rather than "keep the implementation simple."
+
 Two kinds of constraint:
 1. **How-to rules**, for what IS being built: no magic numbers, no business logic in the controller
    layer, no `!important` in any stylesheet. These shape the implementation of in-scope behavior.

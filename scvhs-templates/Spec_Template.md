@@ -223,6 +223,15 @@ What a correct response looks like — structure, type, length.
 *artifact actually needs one. Do not invent a constraint just to fill the section; an omitted*
 *Constraints section is better than a padded one.*
 
+**Every constraint must be a testable restriction, checkable pass or fail by reading the code**
+**or running a tool, the same bar Acceptance Criteria are held to (Section 5).** "Keep it simple,"
+"write clean code," and "include clear comments" are not constraints: they apply equally to every
+sprint, are not specific to this artifact, and cannot be checked. If a constraint like that feels
+necessary, find the specific rule it is standing in for and write that instead, for example "use a
+single fixed-size array; do not implement resizing logic" rather than "keep the implementation
+simple." A Decision Log entry that cannot say pass or fail against a constraint is a sign the
+constraint should not have been written that way.
+
 There are two kinds of constraint:
 
 **How-to rules**, for what IS being built, shaping the implementation of in-scope behavior:

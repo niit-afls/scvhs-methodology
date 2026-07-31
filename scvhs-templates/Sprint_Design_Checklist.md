@@ -36,7 +36,11 @@ Before doing anything else, define the Ship artifact.
 - [ ] **Spec is precise enough to direct an AI tool:** Could a content developer give this spec verbatim to an AI tool and receive the intended artifact? If not, add specificity.
 - [ ] **No intent-only spec sections:** Every section describes structure and constraints, not just goals. Not "make it responsive" — "grid-cols-1 default, sm:grid-cols-2, lg:grid-cols-3."
 - [ ] **Acceptance criteria are binary pass/fail:** Every criterion can be verified with a tool, in a browser, in a terminal, or by reading the code. Remove any criterion that requires subjective judgment.
-- [ ] **Constraints section present:** Rules that apply regardless of whether the output looks correct (no !important; no hardcoded secrets; all inputs validated; etc.).
+- [ ] **Constraints, where present, are testable restrictions:** Every constraint can be checked
+      pass or fail by reading the code or running a tool, the same bar as Acceptance Criteria (no
+      !important; no hardcoded secrets; all inputs validated; etc.). Reject generic statements like
+      "keep it simple" or "write clean code," they apply to every sprint and cannot be checked;
+      find the specific rule underneath and write that instead.
 - [ ] **Technology constructs are named:** Spec uses the correct technology-specific terms for constructs (section vs div; article vs div; constructor injection vs field injection; etc.).
 - [ ] **Mode 4 only, spec was reviewed, not just accepted:** The learner drafted the spec with an AI
       tool from the README, `Spec_Creation_Prompt.md`, and `Sample_Spec_Template.md`, then reviewed

@@ -32,6 +32,12 @@ First, identify from the README:
   Acceptance Criterion, for example: "The endpoint contains no try/catch block. Verify by reading
   the controller method." Do not invent scope-exclusion constraints for techniques the README never
   mentions as a later-sprint topic.
+- Every Constraint you write must be a testable restriction, checkable pass or fail by reading the
+  code, the same bar Acceptance Criteria are held to. Never write generic statements like "keep the
+  implementation simple," "write clean code," or "include clear comments," they apply equally to
+  every sprint and cannot be checked. If the README's pointer gestures at something like that, find
+  the specific, checkable rule underneath it instead, for example "use a single fixed-size array; do
+  not implement resizing logic" rather than "keep the implementation simple."
 
 Fill in the provided template markdown file. Follow its section order exactly. Do not add sections it does not have.
 ```

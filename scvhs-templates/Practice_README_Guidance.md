@@ -51,6 +51,13 @@ environment variables), and name what the code does when they are not set."
 This names the topic and tells the learner what a complete answer looks like, but the learner still
 supplies the actual source and the actual fallback behaviour.
 
+Every topic named must be capable of becoming a testable constraint once the learner answers it,
+checkable pass or fail by reading the code. Never point at generic project hygiene the learner
+would apply on every sprint regardless, "keep it simple," "write clean code," "add clear comments,"
+these are not decisions to write down, and no answer to them can be checked. If a real concern feels
+like that, the fix is to find the specific rule underneath it: not "keep the array handling simple"
+but "state what your chosen structure does when it needs to hold more than you expected."
+
 ### Acceptance criteria your spec must include
 
 Same pattern: name the behaviour that needs a criterion, and require the criterion to name its own
